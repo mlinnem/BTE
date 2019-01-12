@@ -14,7 +14,7 @@ $height-results-panel: calc(105px + #{$height-button});
 
 $width-button: 170px;
 $width-padding: 5vw;
-$width-loading-indicator: 200px;
+$width-loading-indicator: 400px;
 $width-winner-border: 0px;
 
 $padding-tab: 10px;
@@ -53,15 +53,35 @@ $time-duration-backgroundAppear: .2s;
 $time-duration-punch: .2s;
 $time-duration-vs-grows: .2s;
 $time-duration-resultsPanelMoveDown: .55s;
-$time-duration-resultsPanelShow: 1s;
+$time-duration-resultsPanelShow: .15s;
 
-$time-rightCardAppear: 6.8s;
-$time-vs-appear: 6.6s;
-$time-leftCardAppear: 5.1s;
-$time-theQuestionAppears: 4.0s;
-$time-startJumping: 0.55s;
-$time-submitBallot: .3s;
-$time-resultsPanelMoveDown: .3s;
+$time-start-to-submit: .3s;
+$time-start-to-resultsMove: .3s;
+$time-submit-to-jump: .25s;
+$time-submit-to-question: 2.0s;
+$time-question-to-leftCard: 1.0s;
+$time-leftCard-to-vs: 1.5s;
+$time-vs-to-rightCard: .25s;
+
+$time-submitBallot: $time-start-to-submit;
+$time-resultsPanelMoveDown: $time-start-to-resultsMove;
+
+$time-startJumping: $time-submitBallot + $time-submit-to-jump;
+$time-theQuestionAppears: $time-submitBallot + $time-submit-to-question;
+
+$time-leftCardAppear: $time-theQuestionAppears + $time-question-to-leftCard;
+
+$time-vs-appear: $time-leftCardAppear + $time-leftCard-to-vs;
+
+$time-rightCardAppear: $time-vs-appear + $time-vs-to-rightCard;
+
+
+$time-initial-start-to-question: 0s;
+
+$time-initial-question-appear: $time-initial-start-to-question + $time-question-to-leftCard;
+$time-initial-leftCard-appear: $time-initial-question-appear + $time-question-to-leftCard;
+$time-initial-vs-appear: $time-initial-leftCard-appear + $time-leftCard-to-vs;
+$time-initial-rightCard-appear: $time-initial-vs-appear + $time-vs-to-rightCard;
 
 /* ------------------------TOP-LEVEL------------------------ */
 
@@ -408,6 +428,22 @@ button.viewBallots.jump {
   animation-delay: $time-theQuestionAppears;
 }
 
+.ballotBackground.initial_incoming {
+  transform: scale(0);
+  animation-name: grow;
+  animation-duration: $time-duration-vs-grows;
+  animation-fill-mode: forwards;
+  animation-delay: $time-initial-vs-appear;
+}
+
+.theQuestionBlock.initial_incoming {
+  transform: scale(0);
+  animation-name: grow;
+  animation-duration: $time-duration-theQuestionAppear;
+  animation-fill-mode: forwards;
+  animation-delay: $time-initial-question-appear;
+}
+
 .ballot {
   display: flex;
   flex-direction: column;
@@ -477,6 +513,15 @@ button.viewBallots.jump {
   animation-delay: $time-leftCardAppear;
 }
 
+.initial_incomingleft {
+  order: 1;
+  transform: translateX(-100vw);
+  animation-name: comeInFromLeft;
+  animation-duration: $time-duration-cardAppear;
+  animation-fill-mode: forwards;
+  animation-delay: $time-initial-leftCard-appear;
+}
+
 .incomingright {
   order: 2;
   transform: translateX(100vw);
@@ -485,6 +530,16 @@ button.viewBallots.jump {
   animation-fill-mode: forwards;
   animation-delay: $time-rightCardAppear;
 }
+
+.initial_incomingright {
+  order: 2;
+  transform: translateX(100vw);
+  animation-name: comeInFromRight;
+  animation-duration: $time-duration-cardAppear;
+  animation-fill-mode: forwards;
+  animation-delay: $time-initial-rightCard-appear;
+}
+
 @keyframes comeInFromLeft {
   from {
     transform: translateX(-100vw) ;
@@ -788,8 +843,9 @@ button.viewBallots.jump {
 }
 
 .resultsPanel.show {
-  animation-name: printUp2;
+  animation-name: bounceUp;
   animation-fill-mode: forwards;
+  justify-content: ease-out;
   animation-duration: $time-duration-resultsPanelShow;
 }
 
@@ -802,6 +858,17 @@ button.viewBallots.jump {
   }
 }
 
+
+@keyframes bounceUp {
+  0% {
+    transform: translateY(calc(#{$height-results-panel}));
+  }
+
+
+  100% {
+      transform: translateY(0);
+  }
+}
 
 @keyframes printUp2 {
   0% {

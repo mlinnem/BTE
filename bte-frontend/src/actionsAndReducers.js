@@ -315,9 +315,17 @@ switch (action.type) {
 
     var newIncomingID_receive = newState_receive.ballotIDQueue[0];
 
-    var newBallot1_receive = Object.assign({}, newState_receive.ballotStore[newIncomingID_receive], {
-      QueueState : QUEUE_STATE.INCOMING,
-    });
+    var newBallot1_receive;
+
+    if (newState_receive.ballotStore[newIncomingID_receive].QueueState != QUEUE_STATE.INCOMING) {
+       newBallot1_receive = Object.assign({}, newState_receive.ballotStore[newIncomingID_receive], {
+         QueueState : QUEUE_STATE.INITIAL_INCOMING,
+      });
+    } else {
+      newBallot1_receive = Object.assign({}, newState_receive.ballotStore[newIncomingID_receive], {
+        QueueState : QUEUE_STATE.INCOMING,
+     });
+    }
 
     newState_receive.ballotStore[newIncomingID_receive] = newBallot1_receive;
     return newState_receive;
@@ -372,7 +380,7 @@ export function ui (state = {
 focusArea : FOCUSAREA.INITIAL,
 ballotBoxShouldBeJumping: false,
 rulesVisibilityState: "hidden",
-resultsPanelStepInProcess: "show",
+resultsPanelStepInProcess: "already_shown",
 }, action) {
 switch (action.type) {
   case 'SHOW_RANKINGS':
@@ -550,7 +558,8 @@ export const store = Redux.createStore(rootReducer, Redux.applyMiddleware(create
 const QUEUE_STATE = {
 HIDDEN : "hidden",
 INCOMING: "incoming",
-OUTGOING: "outgoing"
+OUTGOING: "outgoing",
+INITIAL_INCOMING: "initial_incoming"
 }
 
 //--Utilities--
