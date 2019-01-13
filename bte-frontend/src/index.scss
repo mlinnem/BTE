@@ -58,10 +58,10 @@ $time-duration-resultsPanelShow: .15s;
 $time-start-to-submit: .3s;
 $time-start-to-resultsMove: .3s;
 $time-submit-to-jump: .25s;
-$time-submit-to-question: 2.0s;
-$time-question-to-leftCard: 1.0s;
-$time-leftCard-to-vs: 1.5s;
-$time-vs-to-rightCard: .25s;
+$time-submit-to-question: 1.75s;
+$time-question-to-leftCard: .75s;
+$time-leftCard-to-vs: 1.40s;
+$time-vs-to-rightCard: .5s;
 
 $time-submitBallot: $time-start-to-submit;
 $time-resultsPanelMoveDown: $time-start-to-resultsMove;
