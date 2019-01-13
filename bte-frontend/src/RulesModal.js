@@ -31,9 +31,11 @@ render () {
       <ol>
       <li>Both animals are totally enraged. They will stop at nothing to defeat their foe.</li>
       <li>The first animal to die loses.</li>
+      <li>The animals that fight are the ones shown in their portraits.</li>
       <li>Animals fight using only their natural instincts.</li>
       <li>Animals fight in an arena made up of one half of each animal's native habitat.</li>
       <li>Animals begin the fight in their half of the arena, within eyesight of their foe.</li>
+
       </ol>
       </div>
       </div>

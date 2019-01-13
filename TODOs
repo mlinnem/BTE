@@ -1,179 +1,62 @@
-Make AWS roles more restrictive
+Beta:
 
-ARIA roles
 
-Credits for images
+Pre-launch:
 
-Check that there's no off by one issue when making ballot pairings.
+Get it serving from server for real
 
-Get rid of obnoxious redux warning
+Put react in prod mode.
 
-Make rankings bookmarkable again
+Turn on and test caching.
 
-Make initial load not animate.
+Switch to global API gateway?
 
-Get spacing working on common function t
-
-Backup of dynamodb tables
-
-Make it so you can't click on items until both are loaded.
-
-Favicon looks too small
-
-Set up forum or something? Subreddit?
-
-Weird animation performance issue when clicking/voting.
-
-Make it so server failures don't cause a CORS Error
-
-Two raccoons
-
-Take a whack at Lighthouse complaints
-
-Make loading indicator shrink out.
-
-Matchups aren't legit. Need to fix!!!
-
-Load initial state rather than weird null states for UI stuff.
-
-Handle error conditions from network.
-=====
-
-Verify that submittedBallots are really being recorded.
-
-Need to work on createBallots, specifically writing the new ballots back to the session, and also striking them from the session in the 'submitBallots' function.
-
+Put magic numbers into environment variables
 
 
 Something off with suffix of ballot IDs
 
+Verify that submittedBallots are really being recorded.
 
-Split up Animals so sort key is animal.
+Wikipedia links
 
-Name authkey to sessionID
+Make it so server failures don't cause a CORS Error
 
-Put magic numbers into environment variables
+Take a whack at Lighthouse complaints
 
-===========
+Contrarian vote filtering
 
-DONE
+Get rid of obnoxious redux warning
 
-Do font fallbacks
+Get spacing working on common function t
 
- Also look into idempotent counters.
+Performance testing / load testing
 
- X Write code to trim old sessions
+Check that there's no off by one issue when making ballot pairings.
 
-===========
+Make AWS roles more restrictive
+Credits for images
 
+Backup of dynamodb tables
 
+Favicon looks too small
 
-When a vote comes in
-  If > 500 votes from this IP:
-    Add to watch list
+Handle error conditions from network.
 
-  If on watch list
-    If more than 80% of ballots are abandoned after watching > 500 transactions:
-      Add to shadowban list
-    If more than 90% of votes are contrarian after watching > 500 transactions:
-      Add to shadowban list
-
-Every 7 days:
-  Clean out IP counts from IPs with activity starting > 7 days ago.
-  Remove entries from watch list that are > 7 days from creation.
-  Remove shadowbans that are > 28 days from creation.
-
-
-On submitBallot:
-  Is on ban list? (IP address -> status):
-    Remove ballot from session but don't put it on the queue
-  Add counter to IP address  (IP address -> voteCount)
-  If not on ban list, but on watch list:
-    (On a side process)
-    If vote is contrarian, add count to contrarian total for this IP (IP address -> contrarian count)
-    If vote is not contrarian, add count to non-contrarian total for this IP (IP address -> non-contrarian count)
-    Add a counter to 'ballots not abandoned' for this IP. (IP address -> ballots not abandoned count)
-    If submissionCount > 1600 && (isContrarian || ballotAbandoner): (IP address -> voteCount, IP address to contrary/not count, IP address -> ballots abandoned vs not)
-      Add to ban list. (Write to status)
-
-
-Every 15 minutes:
-  Clean old sessions
-
-cleanOldSessions:
-  for each session, check if 'last updated' is > 30 minutes old.
-    if it's > 30 minutes old... (Timestamp last edited for ballot.)
-      for each ballot left in the session, add a counter to 'ballots abandoned'. (IP address -> ballots abandoned)
-
-checkOnWatchList:
-checkContrarian:
-
-Table:
-
-IPData
-  Status : (normal, watchlist, shadowbanlist)
-  StatusSetAt: Timestamp
-  submissionCount: N
-  contrarianVoteCount: N
-  nonContrarianVoteCount: N
-  abandonedBallotCount: N
-  notAbandonedBallotCount: N
+Load initial state rather than weird null states for UI stuff.
 
 
 
-  ================
+Post-launch:
 
-Summary:
-Only animal panel really needs animal details. They change based on their ballot's state: Are they hiding, on deck, incoming, IN, outgoing, out. Then they die.
-Ballots basically don't change from when they are created. They change based on their ballot queue state.
+Set up forum or something? Subreddit?
 
-ballotQueue.
+ARIA roles
 
-On receiving ballots...
+Make it so you can't click on items until both are loaded.
 
-Set  all ballots to "hidden" & trigger "advance"
-
-On "advance" (should be auto-triggered after receiving ballots):
-
-Delete OUT ballot from OUT and from ballotStore.
-Set head ballot (which may be null) to OUT ballot. Set it to "outgoing" animation.
-Remove head ballot from ballotQueue.
-Set new head ballot to "incoming".
+Make rankings bookmarkable again
 
 
-====
 
-Chimpanzee
-Boa Constrictor
-Hippopotamus
-Ostrich
-Buffalo/Bison
-Caiman XX
-Otter XX
-Llama XX
-Reindeer XX
-Prairie Dog XX
-
-====
-
-Matchups:
-  <0,1>: LOWER ID ALWAYS FIRST
-
-Look-ups:
-  For a given pair:
-    % Wins for each.
-    Look up by pair of IDs:
-  For an animal:
-    Arch-nemesis: , highest loss % relative to, (greater than 20%.) - Of all pairings
-    Closest match: Wins% - Loss% = minimum - Of all pairings
-====
-
-
-Rules:
-
-1. Both animals are totally enraged. They will stop at nothing.
-2. Whichever animal dies first loses.
-3. Animals fight using their natural instincts. No "If I was the animal I would..." tactics.
-4. Animals fight in an arena made up of one half of each animal's native habitat.
-5. Animals begin the fight in their half of the arena, within eyesight of the other.
-6. Animals may attempt moving into the other half of the arena, as dictated by their total enragement.
+mals may attempt moving into the other half of the arena, as dictated by their total enragement.
