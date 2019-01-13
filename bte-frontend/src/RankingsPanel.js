@@ -19,6 +19,10 @@ render() {
   if (this.props.focusArea === ar.FOCUSAREA.RANKINGS) {
     const node = ReactDOM.findDOMNode(this);
     node.scrollTop = 0;
+  } else if (this.props.focusArea === ar.FOCUSAREA.BALLOTVIEWER) {
+    //TODO: This is a hack. Should only really happen once animation completes.
+    const node = ReactDOM.findDOMNode(this);
+    node.scrollTop = 0;
   }
 
     var animalListings = [];

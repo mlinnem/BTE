@@ -44,11 +44,11 @@ $box-shadow-header: 0 7px 4px rgba(0,0,0,0.2);
 $z-index-highest-possible: 987654321;
 $z-index-highest-except-modals: 5000;
 
-$time-duration-cardAppear: 1.1s;
+$time-duration-cardAppear: .75s;
 $time-duration-jumping: 0.65s;
 $time-duration-submitBallot: 0.55s;
 $time-duration-moveContentFocus: .55s;
-$time-duration-theQuestionAppear: .2s;
+$time-duration-theQuestionAppear: .15s;
 $time-duration-backgroundAppear: .2s;
 $time-duration-punch: .2s;
 $time-duration-vs-grows: .2s;
@@ -58,10 +58,10 @@ $time-duration-resultsPanelShow: .15s;
 $time-start-to-submit: .3s;
 $time-start-to-resultsMove: .3s;
 $time-submit-to-jump: .25s;
-$time-submit-to-question: 1.75s;
-$time-question-to-leftCard: .75s;
-$time-leftCard-to-vs: 1.40s;
-$time-vs-to-rightCard: .5s;
+$time-submit-to-question: .85s;
+$time-question-to-leftCard: .25s;
+$time-leftCard-to-vs: .8s;
+$time-vs-to-rightCard: .25s;
 
 $time-submitBallot: $time-start-to-submit;
 $time-resultsPanelMoveDown: $time-start-to-resultsMove;
