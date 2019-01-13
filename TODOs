@@ -1,18 +1,19 @@
 Beta:
 
-
-Pre-launch:
-
 Get it serving from server for real
 
 Put react in prod mode.
 
+
+Pre-launch:
+
+Buy vector of splash (smaller file size?)
+
+Switch to global API gateway
+
 Turn on and test caching.
 
-Switch to global API gateway?
-
 Put magic numbers into environment variables
-
 
 Something off with suffix of ballot IDs
 

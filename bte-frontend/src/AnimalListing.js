@@ -1,4 +1,5 @@
 import React from 'react';
+import CraftyRankingsImage from "./CraftyRankingsImage";
 const ReactRedux = require('react-redux');
 
 const animalListing_mapStateToProps = (state, ownProps) => { return {
@@ -7,10 +8,16 @@ const animalListing_mapStateToProps = (state, ownProps) => { return {
 
 class AnimalListing_View extends React.Component {
 render () {
+  var waitBeforeShow = 250;
+  if (this.props.rank > 25) {
+    //TODO: If it's not above the fold, okay to delay load a bit. Hacky though.
+    waitBeforeShow = 1000;
+  }
+
   return (
     <div className="animalListing">
       <div className="imageBlock">
-        <img alt={this.props.animal.Name} src={"https://n6d28h0794.execute-api.us-east-1.amazonaws.com/Production/photos?animalName=" + encodeURIComponent(this.props.animal.Name) + "&size=Width_100"}/>
+        <CraftyRankingsImage animal={this.props.animal} waitBeforeShow={waitBeforeShow}/>
       </div>
       <div className="descriptionBlock">
         <span className="description">
