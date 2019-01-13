@@ -555,7 +555,7 @@ export const store = Redux.createStore(rootReducer, Redux.applyMiddleware(create
 
 //--Constants--
 
-const QUEUE_STATE = {
+export const QUEUE_STATE = {
 HIDDEN : "hidden",
 INCOMING: "incoming",
 OUTGOING: "outgoing",

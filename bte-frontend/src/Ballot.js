@@ -1,6 +1,7 @@
 import React from 'react';
 import AnimalContender from "./AnimalContender"
 import RulesButton from "./RulesButton"
+import {QueueState} from "./actionsAndReducers";
 const ReactRedux = require('react-redux');
 
 const ballot_mapStateToProps= (state, ownProps) => { return {
@@ -26,8 +27,8 @@ render () {
   return (
     <div className={"ballot " +  this.props.ballot.QueueState + "Ballot" }>
       <div className={"animalBlock " + this.props.ballot.QueueState + "AnimalBlock"}>
-        <AnimalContender id={this.props.ballot.Animal1ID} animationState={this.props.ballot.QueueState + "left"} side={SIDE.LEFT} votedFor={leftVotedFor}/>
-        <AnimalContender id={this.props.ballot.Animal2ID} animationState={this.props.ballot.QueueState + "right"} side={SIDE.RIGHT} votedFor={rightVotedFor}/>
+        <AnimalContender id={this.props.ballot.Animal1ID} ballotID={this.props.id} animationState={this.props.ballot.QueueState + "left"} side={SIDE.LEFT} votedFor={leftVotedFor}/>
+        <AnimalContender id={this.props.ballot.Animal2ID} ballotID={this.props.id} animationState={this.props.ballot.QueueState + "right"} side={SIDE.RIGHT} votedFor={rightVotedFor}/>
         <img alt="versus" src="./Burst_Transparent.png" className={"ballotBackground " + this.props.ballot.QueueState}/>
       </div>
       <div className={"theQuestionBlock " + this.props.ballot.QueueState}>

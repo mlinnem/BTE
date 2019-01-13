@@ -1,10 +1,14 @@
 import React from 'react';
-import {submitBallotAndAdvance} from "./actionsAndReducers"
+import {submitBallotAndAdvance} from "./actionsAndReducers";
+import {QUEUE_STATE} from "./actionsAndReducers";
+import CraftyContenderImage from "./CraftyContenderImage";
 const ReactRedux = require('react-redux');
 
+const DELAY_HIDDEN_IMAGE_LOAD_MILLISECONDS = 1000;
 
 const animalContender_mapStateToProps = (state, ownProps) => {return {
-animal : state.animals.animalStore[ownProps.id]
+animal : state.animals.animalStore[ownProps.id],
+ballot : state.ballots.ballotStore[ownProps.ballotID]
 }};
 const animalContender_mapDispatchToProps = (dispatch, ownProps) => {
   return {
@@ -22,6 +26,11 @@ render () {
     votedFor = "votedFor";
   }
 
+  var delay = 0;
+  if (this.props.ballot.QueueState === QUEUE_STATE.HIDDEN) {
+    delay = DELAY_HIDDEN_IMAGE_LOAD_MILLISECONDS;
+  }
+
   if (!this.props.animal) {
     return "Failure to load animal with ID: " + this.props.id; //TODO: Have a general error display mechanism
   }
@@ -32,8 +41,8 @@ render () {
     <div className={this.props.animationState + " animal " + votedFor} onClick={this.props.onBallotClick}>
       <div className={"cardAndHover" }>
       <div className="theCard">
-        <img className="photo" alt={this.props.animal.Name} src={"https://n6d28h0794.execute-api.us-east-1.amazonaws.com/Production/photos?animalName=" + encodeURIComponent(this.props.animal.Name) + "&size=Width_600"}/>
-        <div className ="animalNameBox">
+      <CraftyContenderImage animal={this.props.animal} waitBeforeShow={delay}/>
+      <div className ="animalNameBox">
           <span className="animalName">{this.props.animal.Name}</span>
         </div>
       </div>
