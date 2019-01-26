@@ -4,6 +4,52 @@
 
 /*------------------------CONSTANTS------------------------*/
 
+//--Small
+$height-header-small: 27px;
+$fontsize-header-small: 19pt;
+
+$fontsize-animalName-small: 10pt;
+
+$height-questionBlock-small: 30px;
+$fontsize-theQuestion-small: 16pt;
+
+$height-results-panel-small: 66px;
+$height-animalResultsImage-small: 30px;
+$height-animalResultsBar-small: 10px;
+$fontsize-animaResultsText-small: 10pt;
+
+//--Normal
+
+$height-header-normal: 40px;
+$fontsize-header-normal: 24pt;
+
+$fontsize-animalName-normal: 14pt;
+
+$height-questionBlock-normal: 45px;
+$fontsize-theQuestion-normal: 24pt;
+
+$height-results-panel-normal: 100px;
+$height-animalResultsImage-normal: 45px;
+$height-animalResultsBar-normal: 15px;
+$fontsize-animaResultsText-normal: 15pt;
+
+//--Large
+
+$height-header-large: 60px;
+$fontsize-header-large: 37pt;
+
+$fontsize-animalName-large: 21pt;
+
+$height-questionBlock-large: 68px;
+$fontsize-theQuestion-large: 36pt;
+
+$height-results-panel-large: 150px;
+$height-animalResultsImage-large: 45px;
+$height-animalResultsBar-large: 22px;
+$fontsize-animaResultsText-large: 15pt;
+
+
+//--Misc variables
 
 $height-header: calc(40px + 5vmin);
 $height-rankings-header: 120px;
@@ -42,7 +88,10 @@ $box-shadow-modal: 0 6px 6px rgba(0,0,0,.2);
 $box-shadow-header: 0 7px 4px rgba(0,0,0,0.2);
 
 $z-index-highest-possible: 987654321;
-$z-index-highest-except-modals: 5000;
+$z-index-highest-except-modals: 5200;
+
+
+//--animation timing stuff --
 
 $time-duration-cardAppear: .75s;
 $time-duration-jumping: 0.65s;
@@ -204,7 +253,7 @@ button.viewBallots.jump {
       z-index: $z-index-highest-possible;
 }
 
-@media (min-width: 600px) and (min-height: 700px) {
+@media (min-width: 600px), (min-height: 700px) {
   .rulesModalFrame {
     position: absolute;
     width: 550px;
@@ -280,7 +329,7 @@ button.viewBallots.jump {
   top: 0;
   left: 0;
   z-index: $z-index-highest-except-modals;
-  height: $height-header;
+  height: $height-header-normal;
   display: flex;
   align-items: center;
   letter-spacing: 1px;
@@ -288,20 +337,93 @@ button.viewBallots.jump {
   box-shadow: $box-shadow-header;
 }
 
+@media (max-aspect-ratio: 3/4) {
+  //Vertical, small
+  .header {
+    height: $height-header-small;
+  }
+}
+@media (max-aspect-ratio: 3/4) and (min-width: 484px) and (min-height: 695px) {
+  //Vertical, medium
+  .header {
+    height: $height-header-normal;
+  }
+}
+@media (max-aspect-ratio: 3/4) and (min-width: 1043px) and  (min-height: 726px){
+  //Vertical, large
+  .header {
+    height: $height-header-large;
+  }
+}
+@media (min-aspect-ratio: 3/4) {
+  //Horizontal, small
+  .header {
+    height: $height-header-small;
+  }
+}
+@media (min-aspect-ratio: 3/4) and (min-width: 703px) and (min-height: 555px){
+  //Horizontal, medium
+  .header {
+    height: $height-header-normal;
+  }
+}
+@media (min-aspect-ratio: 3/4) and (min-width: 1054px) and  (min-height: 833px){
+  //Horizontal, large
+  .header {
+    height: $height-header-large;
+  }
+}
+
+
 .header-text {
   color: $color-text-medium;
-  font-size: $fontsize-headerText;
+  font-size: $fontsize-header-normal;
   margin-left: $width-padding;
   text-shadow: 0 0.8vmin rgba(0,0,0,0.2);
   font-family: 'Alfa Slab One', 'Komika Axis', "Arial Black", sans-serif;
   /* Or Komika Axis */
 }
 
-@media (max-width: 750px) {
+@media (max-aspect-ratio: 3/4) {
+  //Vertical, small
   .header-text {
-    font-size: $fontsize-headerText-skinny;
+    font-size: $fontsize-header-small;
   }
 }
+@media (max-aspect-ratio: 3/4) and (min-width: 484px) and (min-height: 695px) {
+  //Vertical, medium
+  .header-text {
+    font-size: $fontsize-header-normal;
+  }
+}
+@media (max-aspect-ratio: 3/4) and (min-width: 1043px) and  (min-height: 726px){
+  //Vertical, large
+  .header-text {
+    font-size: $fontsize-header-large;
+  }
+}
+@media (min-aspect-ratio: 3/4) {
+  //Horizontal, small
+  .header-text {
+    font-size: $fontsize-header-small;
+  }
+}
+@media (min-aspect-ratio: 3/4) and (min-width: 703px) and (min-height: 555px) {
+  //Horizontal, medium
+  .header-text {
+    font-size: $fontsize-header-normal;
+  }
+}
+@media (min-aspect-ratio: 3/4) and (min-width: 1054px) and  (min-height: 833px){
+  //Horizontal, large
+  .header-text {
+    font-size: $fontsize-header-large;
+  }
+}
+
+
+
+
 /* ------------------------BALLOTVIEWER------------------------ */
 
 .theCard {
@@ -326,27 +448,88 @@ button.viewBallots.jump {
   justify-content: center;
   order: 3;
   margin-left: 10px; /* A fudge from direct center to account for rules button visual weight */
-  flex-grow: 1;
+  flex-grow: 0;
+}
+
+@media (max-aspect-ratio: 3/4) {
+  //Vertical, small
+  .theQuestionBlock {
+    height: $height-questionBlock-small;
+  }
+}
+@media (max-aspect-ratio: 3/4) and (min-width: 484px) and (min-height: 695px) {
+  //Vertical, medium
+  .theQuestionBlock {
+    height: $height-questionBlock-normal;
+  }
+}
+@media (max-aspect-ratio: 3/4) and (min-width: 1043px) and  (min-height: 726px){
+  //Vertical, large
+  .theQuestionBlock {
+    height: $height-questionBlock-large;
+  }
+}
+@media (min-aspect-ratio: 3/4) {
+  //Horizontal, small
+  .theQuestionBlock {
+    height: $height-questionBlock-small;
+  }
+}
+@media (min-aspect-ratio: 3/4) and (min-width: 703px) and (min-height: 555px) {
+  //Horizontal, medium
+  .theQuestionBlock {
+    height: $height-questionBlock-normal;
+  }
+}
+@media (min-aspect-ratio: 3/4) and (min-width: 1054px) and  (min-height: 833px){
+  //Horizontal, large
+  .theQuestionBlock {
+    height: $height-questionBlock-large;
+  }
 }
 
 .theQuestion {
   font-family:  "BackIssuesBB", "Arial Black", Gadget, sans-serif;
-  font-size: $fontsize-theQuestion;
   color: $color-text-dark;
 }
 
-@media (min-aspect-ratio: 6/4) {
+@media (max-aspect-ratio: 3/4) {
+  //Vertical, small
   .theQuestion {
-    font-size: $fontsize-theQuestion-longAndShort;
+    font-size: $fontsize-theQuestion-small;
+  }
+}
+@media (max-aspect-ratio: 3/4) and (min-width: 484px) and (min-height: 695px) {
+  //Vertical, medium
+  .theQuestion {
+    font-size: $fontsize-theQuestion-normal;
+  }
+}
+@media (max-aspect-ratio: 3/4) and (min-width: 1043px) and  (min-height: 726px){
+  //Vertical, large
+  .theQuestion {
+    font-size: $fontsize-theQuestion-large;
+  }
+}
+@media (min-aspect-ratio: 3/4) {
+  //Horizontal, small
+  .theQuestion {
+    font-size: $fontsize-theQuestion-small;
+  }
+}
+@media (min-aspect-ratio: 3/4) and (min-width: 703px) and (min-height: 555px) {
+  //Horizontal, medium
+  .theQuestion {
+    font-size: $fontsize-theQuestion-normal;
+  }
+}
+@media (min-aspect-ratio: 3/4) and (min-width: 1054px) and  (min-height: 833px){
+  //Horizontal, large
+  .theQuestion {
+    font-size: $fontsize-theQuestion-large;
   }
 }
 
-// @font-face {
-//   font-family: 'Komika Axis';
-//   src: url("KomikaAxis.woff2") format('woff2'), url("KomikaAxis.woff") format('woff');
-//   font-weight: normal;
-//   font-style: normal;
-// }
 
 .loadingIndicator {
   position: absolute;
@@ -354,7 +537,7 @@ button.viewBallots.jump {
   left: 50%;
   width: $width-loading-indicator;
   height: $width-loading-indicator;
-  margin: calc(-#{$width-loading-indicator} / 2) 0 0 calc(-#{$width-loading-indicator} / 2});
+  margin: calc(-#{$width-loading-indicator} / 2) 0 0 calc(-#{$width-loading-indicator} / 2);
   opacity: 0.5;
   animation: growPartial 0.4s ease-out infinite;
   animation-direction: alternate;
@@ -381,7 +564,7 @@ button.viewBallots.jump {
 }
 
 .ballotViewer {
-  height: calc(100vh - #{$height-header} - #{$height-results-panel});
+  //height: calc(100vh - #{$height-header-normal} - #{$height-results-panel-normal});
   width: 90vw;
   padding-left: 5vw;
   padding-right: 5vw;
@@ -392,6 +575,45 @@ button.viewBallots.jump {
   top: 0;
   left: 0;
 }
+
+@media (max-aspect-ratio: 3/4) {
+  //Vertical, small
+  .ballotViewer {
+    height: calc(100vh - #{$height-header-small} - #{$height-results-panel-small});
+  }
+}
+
+@media (max-aspect-ratio: 3/4) and (min-width: 484px) and (min-height: 695px) {
+  //Vertical, medium
+  .ballotViewer {
+    height: calc(100vh - #{$height-header-normal} - #{$height-results-panel-normal});
+  }
+}
+@media (max-aspect-ratio: 3/4) and (min-width: 1043px) and  (min-height: 726px){
+  //Vertical, large
+  .ballotViewer {
+    height: calc(100vh - #{$height-header-large} - #{$height-results-panel-large});
+  }
+}
+@media (min-aspect-ratio: 3/4) {
+  //Horizontal, small
+  .ballotViewer {
+    height: calc(100vh - #{$height-header-small} - #{$height-results-panel-small});
+  }
+}
+@media (min-aspect-ratio: 3/4) and (min-width: 703px) and (min-height: 555px) {
+  //Horizontal, medium
+  .ballotViewer {
+    height: calc(100vh - #{$height-header-normal} - #{$height-results-panel-normal});
+  }
+}
+@media (min-aspect-ratio: 3/4) and (min-width: 1054px) and  (min-height: 833px){
+  //Horizontal, large
+  .ballotViewer {
+    height: calc(100vh - #{$height-header-large} - #{$height-results-panel-large});
+  }
+}
+
 
 .animalBlock {
   display: flex;
@@ -492,9 +714,6 @@ button.viewBallots.jump {
   animation-timing-function: ease-out;
 }
 
-.ballot {
-    // will-change: transform;
-}
 
 @keyframes moveDown {
   from {}
@@ -577,7 +796,45 @@ button.viewBallots.jump {
 
 .animalName {
   font-family: 'Special Elite', 'Helvetica', 'Arial', sans-serif;
-  font-size: $fontsize-animalName;
+//  font-size: $fontsize-animalName-normal;
+}
+
+
+@media (max-aspect-ratio: 3/4) {
+  //Vertical, small
+  .animalName {
+    font-size: $fontsize-animalName-small;
+  }
+}
+@media (max-aspect-ratio: 3/4) and (min-width: 484px) and (min-height: 695px) {
+  //Vertical, medium
+  .animalName {
+    font-size: $fontsize-animalName-normal;
+  }
+}
+@media (max-aspect-ratio: 3/4) and (min-width: 1043px) and  (min-height: 726px){
+  //Vertical, large
+  .animalName {
+    font-size: $fontsize-animalName-large;
+  }
+}
+@media (min-aspect-ratio: 3/4) {
+  //Horizontal, small
+  .animalName {
+    font-size: $fontsize-animalName-small;
+  }
+}
+@media (min-aspect-ratio: 3/4) and (min-width: 703px) and (min-height: 555px) {
+  //Horizontal, medium
+  .animalName {
+    font-size: $fontsize-animalName-normal;
+  }
+}
+@media (min-aspect-ratio: 3/4) and (min-width: 1054px) and  (min-height: 833px){
+  //Horizontal, large
+  .animalName {
+    font-size: $fontsize-animalName-large;
+  }
 }
 
 .hidden {
@@ -639,9 +896,6 @@ button.viewBallots.jump {
       box-shadow: 0px 0px 12px rgba(0,0,0,.3);
 }
 
-
-
-
 .cardHover.votedFor {
     opacity: 1.0;
 }
@@ -672,13 +926,6 @@ button.viewBallots.jump {
   transform: scaleX(-1);
 }
 
-// .animal.outgoingleft,  {
-//   animation-name: punch;
-//   animation-duration: $time-duration-punch;
-// }
-
-
-
 .cardWrapper {
   display: flex;
   flex-direction: row;
@@ -686,6 +933,7 @@ button.viewBallots.jump {
 
 
 /* ------------------------ASPECT-RATIO-SPECIFIC------------------------ */
+
 @media (max-aspect-ratio: 5/14) {
   .animalBlock {
     flex-direction: column;
@@ -700,7 +948,7 @@ button.viewBallots.jump {
     justify-content: center;
   }
 }
-@media (min-aspect-ratio: 5/14) and (max-aspect-ratio: 12/14) {
+@media (min-aspect-ratio: 5/14) and (max-aspect-ratio: 3/4) {
   .animalBlock {
     flex-direction: column;
   }
@@ -729,7 +977,7 @@ button.viewBallots.jump {
     flex-grow: 0;
   }
 }
-@media (min-aspect-ratio: 12/14) and (max-aspect-ratio: 7/5) {
+@media (min-aspect-ratio: 3/4) and (max-aspect-ratio: 7/5) {
   .animalBlock.incomingAnimalBlock {
     flex-direction: row;
   }
@@ -813,16 +1061,92 @@ button.viewBallots.jump {
 }
 
 .ballotBox {
-  height: calc(100vh + #{$height-results-panel});
+  //height: calc(100vh + #{$height-results-panel-normal});
   background-color: $color-background;
   position: relative;
   top: 0;
   left: 0;
 }
 
+@media (max-aspect-ratio: 3/4) {
+  //Vertical, small
+  .ballotBox {
+    height: calc(100vh + #{$height-results-panel-small});
+  }
+}
+@media (max-aspect-ratio: 3/4) and (min-width: 484px) and (min-height: 695px) {
+  //Vertical, medium
+  .ballotBox {
+      height: calc(100vh + #{$height-results-panel-normal});
+  }
+}
+@media (max-aspect-ratio: 3/4) and (min-width: 1043px) and  (min-height: 726px){
+  //Vertical, large
+  .ballotBox {
+      height: calc(100vh + #{$height-results-panel-large});
+  }
+}
+@media (min-aspect-ratio: 3/4) {
+  //Horizontal, small
+  .ballotBox {
+      height: calc(100vh + #{$height-results-panel-small});
+  }
+}
+@media (min-aspect-ratio: 3/4) and (min-width: 703px) and (min-height: 555px) {
+  //Horizontal, medium
+  .ballotBox {
+      height: calc(100vh + #{$height-results-panel-normal});
+  }
+}
+@media (min-aspect-ratio: 3/4) and (min-width: 1054px) and  (min-height: 833px){
+  //Horizontal, large
+  .ballotBox {
+      height: calc(100vh + #{$height-results-panel-large});
+  }
+}
+
 .resultsPanelSpaceHolder {
-  height: $height-results-panel;
+  height: $height-results-panel-normal;
   background-color: $color-background;
+}
+
+
+
+@media (max-aspect-ratio: 3/4) {
+  //Vertical, small
+  .resultsPanelSpaceHolder {
+    height: $height-results-panel-small;
+  }
+}
+@media (max-aspect-ratio: 3/4) and (min-width: 484px) and (min-height: 695px) {
+  //Vertical, medium
+  .resultsPanelSpaceHolder {
+    height: $height-results-panel-normal;
+  }
+}
+@media (max-aspect-ratio: 3/4) and (min-width: 1043px) and  (min-height: 726px){
+  //Vertical, large
+  .resultsPanelSpaceHolder {
+    height: $height-results-panel-large;
+  }
+}
+@media (min-aspect-ratio: 3/4) {
+  //Horizontal, small
+  .resultsPanelSpaceHolder {
+    height: $height-results-panel-small;
+  }
+}
+@media (min-aspect-ratio: 3/4) and (min-width: 703px) and (min-height: 555px) {
+  //Horizontal, medium
+  .resultsPanelSpaceHolder {
+    height: $height-results-panel-normal;
+  }
+}
+@media (min-aspect-ratio: 3/4) and (min-width: 1054px) and  (min-height: 833px){
+  //Horizontal, large
+  .resultsPanelSpaceHolder {
+    height: $height-results-panel-large;
+  }
 }
 
 .resultsPanel {
@@ -831,8 +1155,52 @@ button.viewBallots.jump {
   flex-direction: column;
   justify-content: flex-start;
   position: absolute;
-  top: calc(-1 *  #{$height-results-panel});
+  //height: $height-results-panel-normal;
+  //top: calc(-1 *  #{$height-results-panel});
   width: 100vw;
+}
+
+@media (max-aspect-ratio: 3/4) {
+  //Vertical, small
+  .resultsPanel {
+    height: $height-results-panel-small;
+    top: calc(-1 * #{$height-results-panel-small})
+  }
+}
+@media (max-aspect-ratio: 3/4) and (min-width: 484px) and (min-height: 695px) {
+  //Vertical, medium
+  .resultsPanel {
+    height: $height-results-panel-normal;
+    top: calc(-1 * #{$height-results-panel-normal})
+  }
+}
+@media (max-aspect-ratio: 3/4) and (min-width: 1043px) and  (min-height: 726px){
+  //Vertical, large
+  .resultsPanel {
+    height: $height-results-panel-large;
+    top: calc(-1 * #{$height-results-panel-large})
+  }
+}
+@media (min-aspect-ratio: 3/4) {
+  //Horizontal, small
+  .resultsPanel {
+    height: $height-results-panel-small;
+    top: calc(-1 * #{$height-results-panel-small})
+  }
+}
+@media (min-aspect-ratio: 3/4) and (min-width: 703px) and (min-height: 555px) {
+  //Horizontal, medium
+  .resultsPanel {
+    height: $height-results-panel-normal;
+    top: calc(-1 * #{$height-results-panel-normal})
+  }
+}
+@media (min-aspect-ratio: 3/4) and (min-width: 1054px) and  (min-height: 833px){
+  //Horizontal, large
+  .resultsPanel {
+    height: $height-results-panel-large;
+    top: calc(-1 * #{$height-results-panel-large})
+  }
 }
 
 .resultsPanel.rewrite {
@@ -867,6 +1235,19 @@ button.viewBallots.jump {
 
   100% {
       transform: translateY(0);
+  }
+}
+
+@media (max-width: 720px), (max-height: 650px) {
+  @keyframes bounceUp {
+    0% {
+      transform: translateY(calc(#{$height-results-panel-small}));
+    }
+
+
+    100% {
+        transform: translateY(0);
+    }
   }
 }
 
@@ -1036,11 +1417,18 @@ button.viewBallots.jump {
 }
 
 .resultsPanelPhotoContainer img {
-  width: 50px;
-  height: 40px;
+  //TODO: Used to have width: 40px here
+  height: $height-animalResultsImage-normal;
   grid-row: 1;
   grid-column: 1;
 }
+
+@media (max-width: 720px), (max-height: 650px) {
+  .resultsPanelPhotoContainer img {
+    height: $height-animalResultsImage-small;
+  }
+}
+
 
 .checkAnnotation {
   grid-row: 1;
@@ -1057,7 +1445,7 @@ button.viewBallots.jump {
 }
 
 .percentBarBlock {
-  height: 25px;
+  //height: $height-animalResultsBar-normal;
   flex-grow: 1;
   order: 2;
   position: relative;
@@ -1065,6 +1453,43 @@ button.viewBallots.jump {
   left: 0px;
   display: flex;
   margin-left: 15px;
+}
+
+@media (max-aspect-ratio: 3/4) {
+  //Vertical, small
+  .percentBarBlock {
+    height: $height-animalResultsBar-small;
+  }
+}
+@media (max-aspect-ratio: 3/4) and (min-width: 484px) and (min-height: 695px) {
+  //Vertical, medium
+  .percentBarBlock {
+    height: $height-animalResultsBar-normal;
+  }
+}
+@media (max-aspect-ratio: 3/4) and (min-width: 1043px) and  (min-height: 726px){
+  //Vertical, large
+  .percentBarBlock {
+    height: $height-animalResultsBar-large;
+  }
+}
+@media (min-aspect-ratio: 3/4) {
+  //Horizontal, small
+  .percentBarBlock {
+    height: $height-animalResultsBar-small;
+  }
+}
+@media (min-aspect-ratio: 3/4) and (min-width: 703px) and (min-height: 555px) {
+  //Horizontal, medium
+  .percentBarBlock {
+    height: $height-animalResultsBar-normal;
+  }
+}
+@media (min-aspect-ratio: 3/4) and (min-width: 1054px) and  (min-height: 833px){
+  //Horizontal, large
+  .percentBarBlock {
+    height: $height-animalResultsBar-large;
+  }
 }
 
 .percentBarBlock.agree {
@@ -1119,30 +1544,6 @@ button.viewBallots.jump {
   animation-timing-function: linear;
   animation-delay: $time-startJumping;
 }
-
-// @keyframes punch {
-//   0% {
-//     transform: perspective(200px) translateZ(0px);
-//   }
-//
-//   50% {
-//     transform: perspective(200px) translateZ(-10px);
-//   }
-//
-//   100% {
-//     transform: perspective(200px) translateZ(0px);
-//   }
-// }
-
-  // @keyframes punchDown {
-  //
-  //
-  //   // 100% {
-  //   //   transform: perspective(200px) translateZ(-10px);
-  //   // }
-  //
-  //
-  // }
 
 @keyframes pullUp {
   100% {
@@ -1201,14 +1602,9 @@ button.viewBallots.jump {
   background-color: #C82D2D;
 }
 
-.resultsPanel {
-  height: $height-results-panel;
-  /* Used to have a z-index. Removed. If something is wrong consider z-index: 50 */
-}
-
 .rankingsPanel {
   overflow: auto;
-  height: calc(100vh - #{$height-header});
+  //height: calc(100vh - #{$height-header-normal});
   padding-left: $width-padding;
   padding-right: $width-padding;
   background-color: $color-highlight-main;
@@ -1216,6 +1612,43 @@ button.viewBallots.jump {
   position: relative;
   top: 0;
   left: 0;
+}
+
+@media (max-aspect-ratio: 3/4) {
+  //Vertical, small
+  .rankingsPanel {
+    height:  calc(100vh - #{$height-header-small});
+  }
+}
+@media (max-aspect-ratio: 3/4) and (min-width: 484px) and (min-height: 695px) {
+  //Vertical, medium
+  .rankingsPanel {
+    height:  calc(100vh - #{$height-header-normal});
+  }
+}
+@media (max-aspect-ratio: 3/4) and (min-width: 1043px) and  (min-height: 726px){
+  //Vertical, large
+  .rankingsPanel {
+    height:  calc(100vh - #{$height-header-large});
+  }
+}
+@media (min-aspect-ratio: 3/4) {
+  //Horizontal, small
+  .rankingsPanel {
+    height:  calc(100vh - #{$height-header-small});
+  }
+}
+@media (min-aspect-ratio: 3/4) and (min-width: 703px) and (min-height: 555px) {
+  //Horizontal, medium
+  .rankingsPanel {
+    height:  calc(100vh - #{$height-header-normal});
+  }
+}
+@media (min-aspect-ratio: 3/4) and (min-width: 1054px) and  (min-height: 833px){
+  //Horizontal, large
+  .rankingsPanel {
+    height:  calc(100vh - #{$height-header-large});
+  }
 }
 
 .rankingsHeader {
@@ -1226,7 +1659,44 @@ button.viewBallots.jump {
 }
 
 .rankingsContent {
-  height: calc(100vh - #{$height-header} - #{$height-rankings-header});
+  //height: calc(100vh - #{$height-header-normal} - #{$height-rankings-header});
+}
+
+@media (max-aspect-ratio: 3/4) {
+  //Vertical, small
+  .rankingsContent {
+    height:  calc(100vh - #{$height-header-small} - #{$height-rankings-header});
+  }
+}
+@media (max-aspect-ratio: 3/4) and (min-width: 484px) and (min-height: 695px) {
+  //Vertical, medium
+  .rankingsContent {
+    height:  calc(100vh - #{$height-header-normal} - #{$height-rankings-header});
+  }
+}
+@media (max-aspect-ratio: 3/4) and (min-width: 1043px) and  (min-height: 726px){
+  //Vertical, large
+  .rankingsContent {
+    height:  calc(100vh - #{$height-header-large} - #{$height-rankings-header});
+  }
+}
+@media (min-aspect-ratio: 3/4) {
+  //Horizontal, small
+  .rankingsContent {
+    height:  calc(100vh - #{$height-header-small} - #{$height-rankings-header});
+  }
+}
+@media (min-aspect-ratio: 3/4) and (min-width: 703px) and (min-height: 555px) {
+  //Horizontal, medium
+  .rankingsContent {
+    height:  calc(100vh - #{$height-header-normal} - #{$height-rankings-header});
+  }
+}
+@media (min-aspect-ratio: 3/4) and (min-width: 1054px) and  (min-height: 833px){
+  //Horizontal, large
+  .rankingsContent {
+    height:  calc(100vh - #{$height-header-large} - #{$height-rankings-header});
+  }
 }
 
 .spacer {
