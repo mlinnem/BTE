@@ -6,17 +6,19 @@
 
 //--Small
 $height-header-small: 27px;
-$fontsize-header-small: 19pt;
+$fontsize-header-small: 16pt;
 
 $fontsize-animalName-small: 10pt;
 
 $height-questionBlock-small: 30px;
-$fontsize-theQuestion-small: 16pt;
+$fontsize-theQuestion-small: 14pt;
 
-$height-results-panel-small: 66px;
-$height-animalResultsImage-small: 30px;
-$height-animalResultsBar-small: 10px;
-$fontsize-animaResultsText-small: 10pt;
+$height-results-panel-small: 100px;
+$height-animalResultsImage-small: 20px;
+$height-animalResultsBar-small: 12px;
+$fontsize-animalResultsText-small: 7pt;
+
+$height-resultRow-margin-small: 4.5px;
 
 //--Normal
 
@@ -28,10 +30,11 @@ $fontsize-animalName-normal: 14pt;
 $height-questionBlock-normal: 45px;
 $fontsize-theQuestion-normal: 24pt;
 
-$height-results-panel-normal: 100px;
-$height-animalResultsImage-normal: 45px;
-$height-animalResultsBar-normal: 15px;
-$fontsize-animaResultsText-normal: 15pt;
+$height-results-panel-normal: 120px;
+$height-animalResultsImage-normal: 30px;
+$height-animalResultsBar-normal: 18px;
+$fontsize-animalResultsText-normal: 13pt;
+$height-resultRow-margin-normal: 6.5px;
 
 //--Large
 
@@ -46,7 +49,8 @@ $fontsize-theQuestion-large: 36pt;
 $height-results-panel-large: 150px;
 $height-animalResultsImage-large: 45px;
 $height-animalResultsBar-large: 22px;
-$fontsize-animaResultsText-large: 15pt;
+$fontsize-animalResultsText-large: 15pt;
+$height-resultRow-margin-large: 10px;
 
 
 //--Misc variables
@@ -1400,12 +1404,51 @@ button.viewBallots.jump {
   margin-left: $width-padding;
   margin-right: $width-padding;
   flex-grow: 0;
-  margin-top: 10px;
+//  margin-top: $height-resultRow-margin-small;
 }
 
+
+@media (max-aspect-ratio: 3/4) {
+  //Vertical, small
+  .winRateRow {
+    margin-top: $height-resultRow-margin-small;
+  }
+}
+@media (max-aspect-ratio: 3/4) and (min-width: 484px) and (min-height: 695px) {
+  //Vertical, medium
+  .winRateRow {
+    margin-top: $height-resultRow-margin-normal;
+  }
+}
+@media (max-aspect-ratio: 3/4) and (min-width: 1043px) and  (min-height: 726px){
+  //Vertical, large
+  .winRateRow {
+    margin-top: $height-resultRow-margin-large;
+  }
+}
+@media (min-aspect-ratio: 3/4) {
+  //Horizontal, small
+  .winRateRow {
+    margin-top: $height-resultRow-margin-small;
+  }
+}
+@media (min-aspect-ratio: 3/4) and (min-width: 703px) and (min-height: 555px) {
+  //Horizontal, medium
+  .winRateRow {
+    margin-top: $height-resultRow-margin-normal;
+  }
+}
+@media (min-aspect-ratio: 3/4) and (min-width: 1054px) and  (min-height: 833px){
+  //Horizontal, large
+  .winRateRow {
+    margin-top: $height-resultRow-margin-large;
+  }
+}
+
+//TODO: What is this even doing?
 .resultsPanelPhotoContainer {
-  width: 50px;
-  height: 40px;
+  // width: 50px;
+  // height: 40px;
   display: grid;
   order: 1;
   flex-grow: 0;
@@ -1418,14 +1461,46 @@ button.viewBallots.jump {
 
 .resultsPanelPhotoContainer img {
   //TODO: Used to have width: 40px here
-  height: $height-animalResultsImage-normal;
+  //height: $height-animalResultsImage-normal;
   grid-row: 1;
   grid-column: 1;
 }
 
-@media (max-width: 720px), (max-height: 650px) {
+
+@media (max-aspect-ratio: 3/4) {
+  //Vertical, small
   .resultsPanelPhotoContainer img {
     height: $height-animalResultsImage-small;
+  }
+}
+@media (max-aspect-ratio: 3/4) and (min-width: 484px) and (min-height: 695px) {
+  //Vertical, medium
+  .resultsPanelPhotoContainer img {
+    height: $height-animalResultsImage-normal;
+  }
+}
+@media (max-aspect-ratio: 3/4) and (min-width: 1043px) and  (min-height: 726px){
+  //Vertical, large
+  .resultsPanelPhotoContainer img {
+    height: $height-animalResultsImage-large;
+  }
+}
+@media (min-aspect-ratio: 3/4) {
+  //Horizontal, small
+  .resultsPanelPhotoContainer img {
+    height: $height-animalResultsImage-small;
+  }
+}
+@media (min-aspect-ratio: 3/4) and (min-width: 703px) and (min-height: 555px) {
+  //Horizontal, medium
+  .resultsPanelPhotoContainer img {
+    height: $height-animalResultsImage-normal;
+  }
+}
+@media (min-aspect-ratio: 3/4) and (min-width: 1054px) and  (min-height: 833px){
+  //Horizontal, large
+  .resultsPanelPhotoContainer img {
+    height: $height-animalResultsImage-large;
   }
 }
 
@@ -1501,7 +1576,44 @@ button.viewBallots.jump {
   background-color: $color-highlight-secondary;
   grid-column: 1;
   grid-row: 1;
-  height: 25px;
+  //height: 25px;
+}
+
+@media (max-aspect-ratio: 3/4) {
+  //Vertical, small
+  .percentBar {
+    height: $height-animalResultsBar-small;
+  }
+}
+@media (max-aspect-ratio: 3/4) and (min-width: 484px) and (min-height: 695px) {
+  //Vertical, medium
+  .percentBar {
+    height: $height-animalResultsBar-normal;
+  }
+}
+@media (max-aspect-ratio: 3/4) and (min-width: 1043px) and  (min-height: 726px){
+  //Vertical, large
+  .percentBar {
+    height: $height-animalResultsBar-large;
+  }
+}
+@media (min-aspect-ratio: 3/4) {
+  //Horizontal, small
+  .percentBar {
+    height: $height-animalResultsBar-small;
+  }
+}
+@media (min-aspect-ratio: 3/4) and (min-width: 703px) and (min-height: 555px) {
+  //Horizontal, medium
+  .percentBar {
+    height: $height-animalResultsBar-normal;
+  }
+}
+@media (min-aspect-ratio: 3/4) and (min-width: 1054px) and  (min-height: 833px){
+  //Horizontal, large
+  .percentBar {
+    height: $height-animalResultsBar-large;
+  }
 }
 
 .resultsSpacer {
@@ -1515,11 +1627,49 @@ button.viewBallots.jump {
   grid-column: 1;
   grid-row: 1;
   font-family: 'Special Elite';
+//  font-size:
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-left: 10px;
+  margin-left: 3px;
   padding-top: 3px; /* Adjusts so font actually looks centered */
+}
+
+@media (max-aspect-ratio: 3/4) {
+  //Vertical, small
+  .animalNameOnPercentBar {
+    font-size: $fontsize-animalResultsText-small;
+  }
+}
+@media (max-aspect-ratio: 3/4) and (min-width: 484px) and (min-height: 695px) {
+  //Vertical, medium
+  .animalNameOnPercentBar {
+    font-size: $fontsize-animalResultsText-normal;
+  }
+}
+@media (max-aspect-ratio: 3/4) and (min-width: 1043px) and  (min-height: 726px){
+  //Vertical, large
+  .animalNameOnPercentBar {
+    font-size: $fontsize-animalResultsText-large;
+  }
+}
+@media (min-aspect-ratio: 3/4) {
+  //Horizontal, small
+  .animalNameOnPercentBar {
+    font-size: $fontsize-animalResultsText-small;
+  }
+}
+@media (min-aspect-ratio: 3/4) and (min-width: 703px) and (min-height: 555px) {
+  //Horizontal, medium
+  .animalNameOnPercentBar {
+    font-size: $fontsize-animalResultsText-normal;
+  }
+}
+@media (min-aspect-ratio: 3/4) and (min-width: 1054px) and  (min-height: 833px){
+  //Horizontal, large
+  .animalNameOnPercentBar {
+    font-size: $fontsize-animalResultsText-large;
+  }
 }
 
 .percentBarAndAnimalName {
@@ -1535,8 +1685,45 @@ button.viewBallots.jump {
     justify-content: center;
       font-family: "Special Elite";
     margin-top: 4px; /* Adjusts so font actually looks centered */
-
 }
+
+@media (max-aspect-ratio: 3/4) {
+  //Vertical, small
+  .percentAsNumbers {
+    font-size: $fontsize-animalResultsText-small;
+  }
+}
+@media (max-aspect-ratio: 3/4) and (min-width: 484px) and (min-height: 695px) {
+  //Vertical, medium
+  .percentAsNumbers {
+    font-size: $fontsize-animalResultsText-normal;
+  }
+}
+@media (max-aspect-ratio: 3/4) and (min-width: 1043px) and  (min-height: 726px){
+  //Vertical, large
+  .percentAsNumbers {
+    font-size: $fontsize-animalResultsText-large;
+  }
+}
+@media (min-aspect-ratio: 3/4) {
+  //Horizontal, small
+  .percentAsNumbers {
+    font-size: $fontsize-animalResultsText-small;
+  }
+}
+@media (min-aspect-ratio: 3/4) and (min-width: 703px) and (min-height: 555px) {
+  //Horizontal, medium
+  .percentAsNumbers {
+    font-size: $fontsize-animalResultsText-normal;
+  }
+}
+@media (min-aspect-ratio: 3/4) and (min-width: 1054px) and  (min-height: 833px){
+  //Horizontal, large
+  .percentAsNumbers {
+    font-size: $fontsize-animalResultsText-large;
+  }
+}
+
 
 .ballotBox.jump {
   animation-name: jump;
