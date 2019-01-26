@@ -201,21 +201,116 @@ button.viewBallots.jump {
   color: $color-background-darker;
 }
 
-@keyframes showRankings {
-  from {
-  }
+@media (max-aspect-ratio: 3/4) {
+  //Vertical, small
+  @keyframes showRankings {
+    from {
+    }
 
-  to {
-    transform: translateY(calc(-100vh + #{$height-header} - #{$height-spacer}));
+    to {
+      transform: translateY(calc(-100vh + #{$height-header-small} - #{$height-spacer}));
+    }
+  }
+  @keyframes showBallots {
+    from {
+      transform: translateY(calc(-100vh + #{$height-header-small} - #{$height-spacer}));
+    }
+
+    to {}
   }
 }
-@keyframes showBallots {
-  from {
-    transform: translateY(calc(-100vh + #{$height-header} - #{$height-spacer}));
-  }
+@media (max-aspect-ratio: 3/4) and (min-width: 484px) and (min-height: 695px) {
+  //Vertical, medium
+  @keyframes showRankings {
+    from {
+    }
 
-  to {}
+    to {
+      transform: translateY(calc(-100vh + #{$height-header-normal} - #{$height-spacer}));
+    }
+  }
+  @keyframes showBallots {
+    from {
+      transform: translateY(calc(-100vh + #{$height-header-normal} - #{$height-spacer}));
+    }
+
+    to {}
+  }
 }
+@media (max-aspect-ratio: 3/4) and (min-width: 1043px) and  (min-height: 726px){
+  //Vertical, large
+  @keyframes showRankings {
+    from {
+    }
+
+    to {
+      transform: translateY(calc(-100vh + #{$height-header-large} - #{$height-spacer}));
+    }
+  }
+  @keyframes showBallots {
+    from {
+      transform: translateY(calc(-100vh + #{$height-header-large} - #{$height-spacer}));
+    }
+
+    to {}
+  }
+}
+@media (min-aspect-ratio: 3/4) {
+  //Horizontal, small
+  @keyframes showRankings {
+    from {
+    }
+
+    to {
+      transform: translateY(calc(-100vh + #{$height-header-small} - #{$height-spacer}));
+    }
+  }
+  @keyframes showBallots {
+    from {
+      transform: translateY(calc(-100vh + #{$height-header-small} - #{$height-spacer}));
+    }
+
+    to {}
+  }
+}
+@media (min-aspect-ratio: 3/4) and (min-width: 703px) and (min-height: 555px){
+  //Horizontal, medium
+  @keyframes showRankings {
+    from {
+    }
+
+    to {
+      transform: translateY(calc(-100vh + #{$height-header-normal} - #{$height-spacer}));
+    }
+  }
+  @keyframes showBallots {
+    from {
+      transform: translateY(calc(-100vh + #{$height-header-normal} - #{$height-spacer}));
+    }
+
+    to {}
+  }
+}
+@media (min-aspect-ratio: 3/4) and (min-width: 1054px) and  (min-height: 833px){
+  //Horizontal, large
+  @keyframes showRankings {
+    from {
+    }
+
+    to {
+      transform: translateY(calc(-100vh + #{$height-header-large} - #{$height-spacer}));
+    }
+  }
+  @keyframes showBallots {
+    from {
+      transform: translateY(calc(-100vh + #{$height-header-large} - #{$height-spacer}));
+    }
+
+    to {}
+  }
+}
+
+
 
 @font-face {
   font-family: 'Back Issues BB';
@@ -284,6 +379,7 @@ button.viewBallots.jump {
   .rulesModalBody {
     overflow: scroll;
     max-height: 40vh;
+    -webkit-overflow-scrolling: touch;
   }
 }
 
