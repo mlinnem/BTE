@@ -11,14 +11,17 @@ $fontsize-header-small: 16pt;
 $fontsize-animalName-small: 10pt;
 
 $height-questionBlock-small: 30px;
-$fontsize-theQuestion-small: 14pt;
+$fontsize-theQuestion-small: 16pt;
 
 $height-results-panel-small: 100px;
 $height-animalResultsImage-small: 20px;
 $height-animalResultsBar-small: 12px;
 $fontsize-animalResultsText-small: 7pt;
-
 $height-resultRow-margin-small: 4.5px;
+
+$fontsize-rankingsHeaderTitle-small: 16pt;
+$fontsize-rank-small: 14pt;
+
 
 //--Normal
 
@@ -36,6 +39,10 @@ $height-animalResultsBar-normal: 18px;
 $fontsize-animalResultsText-normal: 13pt;
 $height-resultRow-margin-normal: 6.5px;
 
+$fontsize-rankingsHeaderTitle-normal: 24pt;
+$fontsize-rank-normal: 21pt;
+
+
 //--Large
 
 $height-header-large: 60px;
@@ -51,6 +58,10 @@ $height-animalResultsImage-large: 45px;
 $height-animalResultsBar-large: 22px;
 $fontsize-animalResultsText-large: 15pt;
 $height-resultRow-margin-large: 10px;
+
+$fontsize-rankingsHeaderTitle-large: 36pt;
+$fontsize-rank-large: 32pt;
+
 
 
 //--Misc variables
@@ -72,16 +83,6 @@ $padding-modal: 35px;
 
 $fontsize-rulesModalTitle: 48px;
 $fontsize-rulesModalBody: 18px;
-
-$fontsize-headerText: 6vmax;
-$fontsize-theQuestion: 6vw;
-$fontsize-animalName: 2.75vmax;
-
-$fontsize-headerText-skinny: calc(5vw + 5px);
-$fontsize-theQuestion-longAndShort: calc(5vh + 10px);
-
-$fontsize-rankingsHeaderTitle: 32px;
-$fontsize-rank: 32px;
 
 $fontsize-button: 13px;
 
@@ -1119,9 +1120,47 @@ button.viewBallots.jump {
 
 .rankingsHeaderTitle {
   font-family: 'Special Elite', 'Helvetica', 'Arial', sans-serif;
-  font-size: $fontsize-rankingsHeaderTitle;
+  //font-size: $fontsize-rankingsHeaderTitle;
   color: $color-text-light;
   text-shadow: 0 2px 2px rgba(0,0,0,0.4);
+}
+
+
+@media (max-aspect-ratio: 3/4) {
+  //Vertical, small
+  .rankingsHeaderTitle {
+    font-size: $fontsize-rankingsHeaderTitle-small;
+  }
+}
+@media (max-aspect-ratio: 3/4) and (min-width: 484px) and (min-height: 695px) {
+  //Vertical, medium
+  .rankingsHeaderTitle {
+    font-size: $fontsize-rankingsHeaderTitle-normal;
+  }
+}
+@media (max-aspect-ratio: 3/4) and (min-width: 1043px) and  (min-height: 726px){
+  //Vertical, large
+  .rankingsHeaderTitle {
+    font-size: $fontsize-rankingsHeaderTitle-large;
+  }
+}
+@media (min-aspect-ratio: 3/4) {
+  //Horizontal, small
+  .rankingsHeaderTitle {
+    font-size: $fontsize-rankingsHeaderTitle-small;
+  }
+}
+@media (min-aspect-ratio: 3/4) and (min-width: 703px) and (min-height: 555px) {
+  //Horizontal, medium
+  .rankingsHeaderTitle {
+    font-size: $fontsize-rankingsHeaderTitle-normal;
+  }
+}
+@media (min-aspect-ratio: 3/4) and (min-width: 1054px) and  (min-height: 833px){
+  //Horizontal, large
+  .rankingsHeaderTitle {
+    font-size: $fontsize-rankingsHeaderTitle-large;
+  }
 }
 
 .descriptionBlock {
@@ -1143,9 +1182,86 @@ button.viewBallots.jump {
 
 
 .rank {
-  font-size: $fontsize-rank;
   margin-right: 12px;
 }
+
+@media (max-aspect-ratio: 3/4) {
+  //Vertical, small
+  .rank {
+    font-size: $fontsize-rank-small;
+  }
+}
+@media (max-aspect-ratio: 3/4) and (min-width: 484px) and (min-height: 695px) {
+  //Vertical, medium
+  .rank {
+    font-size: $fontsize-rank-normal;
+  }
+}
+@media (max-aspect-ratio: 3/4) and (min-width: 1043px) and  (min-height: 726px){
+  //Vertical, large
+  .rank {
+    font-size: $fontsize-rank-large;
+  }
+}
+@media (min-aspect-ratio: 3/4) {
+  //Horizontal, small
+  .rank {
+    font-size: $fontsize-rank-small;
+  }
+}
+@media (min-aspect-ratio: 3/4) and (min-width: 703px) and (min-height: 555px) {
+  //Horizontal, medium
+  .rank {
+    font-size: $fontsize-rank-normal;
+  }
+}
+@media (min-aspect-ratio: 3/4) and (min-width: 1054px) and  (min-height: 833px){
+  //Horizontal, large
+  .rank {
+    font-size: $fontsize-rank-large;
+  }
+}
+
+.description .name {
+}
+
+@media (max-aspect-ratio: 3/4) {
+  //Vertical, small
+  .description .name {
+    font-size: $fontsize-animalName-small;
+  }
+}
+@media (max-aspect-ratio: 3/4) and (min-width: 484px) and (min-height: 695px) {
+  //Vertical, medium
+  .description .name {
+    font-size: $fontsize-animalName-normal;
+  }
+}
+@media (max-aspect-ratio: 3/4) and (min-width: 1043px) and  (min-height: 726px){
+  //Vertical, large
+  .description .name {
+    font-size: $fontsize-animalName-large;
+  }
+}
+@media (min-aspect-ratio: 3/4) {
+  //Horizontal, small
+  .description .name {
+    font-size: $fontsize-animalName-small;
+  }
+}
+@media (min-aspect-ratio: 3/4) and (min-width: 703px) and (min-height: 555px) {
+  //Horizontal, medium
+  .description .name {
+    font-size: $fontsize-animalName-normal;
+  }
+}
+@media (min-aspect-ratio: 3/4) and (min-width: 1054px) and  (min-height: 833px){
+  //Horizontal, large
+  .description .name {
+    font-size: $fontsize-animalName-large;
+  }
+}
+
 
 .animalListing img {
   height: $height-animalListing-image;
