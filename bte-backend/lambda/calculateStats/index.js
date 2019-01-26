@@ -25,7 +25,13 @@ async function calculateAnimalStatistics() {
     var animal = animals[animalID];
     console.log(animal);
     console.log("        Calculate win %");
-    var winPercentage = animal.Wins / (animal.Wins + animal.Losses);
+    var total = (animal.Wins + animal.Losses);
+    var winPercentage;
+    if (total > 0) {
+      winPercentage = animal.Wins / total;
+    } else {
+      winPercentage = .5;
+    }
     console.log(winPercentage);
     var animalIDAndWinPercentage = {
       'ID' : animal.ID,
@@ -107,8 +113,8 @@ function backend_getAnimals() {
 
 function backend_writeAllUpdatesToBackend(putRankingsStatement, putAnimalCountStatement) {
   var putRankingsPromise = io.put(putRankingsStatement).promise();
-  var putAnimalCountStatement = io.put(putAnimalCountStatement).promise();
-  return Promise.all([putRankingsPromise, putAnimalCountStatement])
+  var putAnimalCountPromise = io.put(putAnimalCountStatement).promise();
+  return Promise.all([putRankingsPromise, putAnimalCountPromise])
   .then((results) => {
     console.log("...put_statistics results:");
     console.log(results);

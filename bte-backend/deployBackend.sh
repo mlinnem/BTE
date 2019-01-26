@@ -8,5 +8,6 @@ cd lambda
 ../buildLambda.sh updateIPData
 ../buildLambda.sh cleanUpStaleSessions
 ../buildLambda.sh calculateStats
+../buildLambda.sh _reinitializeAnimals
 cd ..
 ./buildS3.sh

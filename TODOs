@@ -4,8 +4,11 @@ Get it serving from server for real
 
 Put react in prod mode.
 
+Refresh animal rankings every minute or so.
 
 Pre-launch:
+
+Move google web fonts on to server. Taking too f-in long to load.
 
 Buy vector of splash (smaller file size?)
 

@@ -18,7 +18,7 @@ ReactDOM.render(
 startup();
 
 function startup() {
-ar.store.dispatch(ar.fetchAuthKeyIfNeeded());
+  ar.store.dispatch(ar.fetchAuthKeyIfNeeded());
 }
 
 // If you want your app to work offline and load faster, you can change

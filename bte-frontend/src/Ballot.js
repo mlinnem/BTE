@@ -1,7 +1,6 @@
 import React from 'react';
 import AnimalContender from "./AnimalContender"
 import RulesButton from "./RulesButton"
-import {QueueState} from "./actionsAndReducers";
 const ReactRedux = require('react-redux');
 
 const ballot_mapStateToProps= (state, ownProps) => { return {
