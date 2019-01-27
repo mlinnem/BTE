@@ -17,8 +17,33 @@ ReactDOM.render(
 
 startup();
 
+function isIOSSafari() {
+  var ua = window.navigator.userAgent;
+  var iOS = !!ua.match(/iPad/i) || !!ua.match(/iPhone/i);
+  var webkit = !!ua.match(/WebKit/i);
+  var iOSSafari = iOS && webkit && !ua.match(/CriOS/i);
+  return iOSSafari;
+}
+
 function startup() {
   ar.store.dispatch(ar.fetchAuthKeyIfNeeded());
+
+  if (isIOSSafari) {
+    loadIOSSafariCSS();
+  }
+}
+
+function loadIOSSafariCSS() {
+
+    var cssPath = "./iosSafari.css";
+
+    var head = document.getElementsByTagName('head')[0];
+    var link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = cssPath;
+    link.media = 'all';
+    head.appendChild(link);
 }
 
 // If you want your app to work offline and load faster, you can change

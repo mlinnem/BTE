@@ -15,6 +15,7 @@ $fontsize-theQuestion-small: 16pt;
 
 $height-results-panel-small: 100px;
 $height-animalResultsImage-small: 20px;
+$width-animalResultsImage-small: 25px;
 $height-animalResultsBar-small: 12px;
 $fontsize-animalResultsText-small: 7pt;
 $height-resultRow-margin-small: 4.5px;
@@ -35,6 +36,7 @@ $fontsize-theQuestion-normal: 24pt;
 
 $height-results-panel-normal: 120px;
 $height-animalResultsImage-normal: 30px;
+$width-animalResultsImage-normal: 37.5px;
 $height-animalResultsBar-normal: 18px;
 $fontsize-animalResultsText-normal: 13pt;
 $height-resultRow-margin-normal: 6.5px;
@@ -55,6 +57,7 @@ $fontsize-theQuestion-large: 36pt;
 
 $height-results-panel-large: 150px;
 $height-animalResultsImage-large: 45px;
+$width-animalResultsImage-large: 56.25px;
 $height-animalResultsBar-large: 22px;
 $fontsize-animalResultsText-large: 15pt;
 $height-resultRow-margin-large: 10px;
@@ -64,11 +67,13 @@ $fontsize-rank-large: 32pt;
 
 
 
+
 //--Misc variables
 
 $height-header: calc(40px + 5vmin);
 $height-rankings-header: 120px;
 $height-button: 35px;
+$height-rankings-button-safari: 79px;
 $height-spacer: 0px;
 $height-animalListing-image: 75px;
 $height-results-panel: calc(105px + #{$height-button});
@@ -184,6 +189,7 @@ button.viewBallots {
   background-color: $color-background-dark;
   color: $color-text-dark;
   position: absolute;
+  height: $height-button;
   padding-top: $padding-tab;
   padding-bottom: $padding-tab;
   border-bottom-left-radius: 5px;
@@ -380,7 +386,7 @@ button.viewBallots.jump {
   .rulesModalBody {
     overflow: scroll;
     max-height: 40vh;
-    -webkit-overflow-scrolling: touch;
+    overflow-scrolling: touch;
   }
 }
 
@@ -1284,6 +1290,8 @@ button.viewBallots.jump {
   left: 0;
 }
 
+
+
 @media (max-aspect-ratio: 3/4) {
   //Vertical, small
   .ballotBox {
@@ -1683,36 +1691,42 @@ button.viewBallots.jump {
   //Vertical, small
   .resultsPanelPhotoContainer img {
     height: $height-animalResultsImage-small;
+    width: $width-animalResultsImage-small;
   }
 }
 @media (max-aspect-ratio: 3/4) and (min-width: 484px) and (min-height: 695px) {
   //Vertical, medium
   .resultsPanelPhotoContainer img {
     height: $height-animalResultsImage-normal;
+    width: $width-animalResultsImage-normal;
   }
 }
 @media (max-aspect-ratio: 3/4) and (min-width: 1043px) and  (min-height: 726px){
   //Vertical, large
   .resultsPanelPhotoContainer img {
     height: $height-animalResultsImage-large;
+    width: $width-animalResultsImage-large;
   }
 }
 @media (min-aspect-ratio: 3/4) {
   //Horizontal, small
   .resultsPanelPhotoContainer img {
     height: $height-animalResultsImage-small;
+    width: $width-animalResultsImage-small;
   }
 }
 @media (min-aspect-ratio: 3/4) and (min-width: 703px) and (min-height: 555px) {
   //Horizontal, medium
   .resultsPanelPhotoContainer img {
     height: $height-animalResultsImage-normal;
+    width: $width-animalResultsImage-normal;
   }
 }
 @media (min-aspect-ratio: 3/4) and (min-width: 1054px) and  (min-height: 833px){
   //Horizontal, large
   .resultsPanelPhotoContainer img {
     height: $height-animalResultsImage-large;
+    width: $width-animalResultsImage-large;
   }
 }
 
@@ -1720,7 +1734,7 @@ button.viewBallots.jump {
 .checkAnnotation {
   grid-row: 1;
   grid-column: 1;
-
+  z-index: 1;
   background-image: url("./check.png");
   background-size: 25% 25%;
   background-position: top 5% left 5%;
@@ -2003,6 +2017,7 @@ button.viewBallots.jump {
 
 .rankingsPanel {
   overflow: auto;
+  overflow-scrolling: touch;
   //height: calc(100vh - #{$height-header-normal});
   padding-left: $width-padding;
   padding-right: $width-padding;

@@ -33,8 +33,8 @@ render() {
    return (
     <div className="winRateRow">
       <div className={"resultsPanelPhotoContainer " + agreeDisagree} >
-        <img alt={animal.Name}  src={"https://n6d28h0794.execute-api.us-east-1.amazonaws.com/Production/photos?animalName=" + encodeURIComponent(animal.Name) + "&size=Width_100"}/>
         <img className={"checkAnnotation " + agreeDisagree}/>
+        <img alt={animal.Name}  src={"https://n6d28h0794.execute-api.us-east-1.amazonaws.com/Production/photos?animalName=" + encodeURIComponent(animal.Name) + "&size=Width_100"}/>
       </div>
       <div className={"percentBarBlock "  + agreeDisagree}>
         <div className="percentBarAndAnimalName">
