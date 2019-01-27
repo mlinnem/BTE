@@ -31,7 +31,9 @@ render () {
         <img alt="versus" src="./Burst_Transparent.png" className={"ballotBackground " + this.props.ballot.QueueState}/>
       </div>
       <div className={"theQuestionBlock " + this.props.ballot.QueueState}>
-        <span className="theQuestion">Who Would Win?</span><RulesButton/>
+        <span className={"theQuestionPlusRulesButton"}>
+          <span className="theQuestion">Who Would Win?</span><RulesButton/>
+        </span>
       </div>
     </div>
   );

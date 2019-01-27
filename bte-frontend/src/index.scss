@@ -19,6 +19,7 @@ $width-animalResultsImage-small: 25px;
 $height-animalResultsBar-small: 12px;
 $fontsize-animalResultsText-small: 7pt;
 $height-resultRow-margin-small: 4.5px;
+$height-rulesButton-small: 20px;
 
 $fontsize-rankingsHeaderTitle-small: 16pt;
 $fontsize-rank-small: 14pt;
@@ -40,6 +41,7 @@ $width-animalResultsImage-normal: 37.5px;
 $height-animalResultsBar-normal: 18px;
 $fontsize-animalResultsText-normal: 13pt;
 $height-resultRow-margin-normal: 6.5px;
+$height-rulesButton-normal: 30px;
 
 $fontsize-rankingsHeaderTitle-normal: 24pt;
 $fontsize-rank-normal: 21pt;
@@ -61,6 +63,7 @@ $width-animalResultsImage-large: 56.25px;
 $height-animalResultsBar-large: 22px;
 $fontsize-animalResultsText-large: 15pt;
 $height-resultRow-margin-large: 10px;
+$height-rulesButton-large: 40px;
 
 $fontsize-rankingsHeaderTitle-large: 36pt;
 $fontsize-rank-large: 32pt;
@@ -199,6 +202,7 @@ button.viewBallots {
 }
 
 button.viewBallots:hover {
+  height: calc(#{$height-button} + #{$animate-button-amount});
   padding-top: calc(#{$padding-tab} + #{$animate-button-amount});
 }
 
@@ -595,6 +599,11 @@ button.viewBallots.jump {
   }
 }
 
+.theQuestionPlusRulesButton {
+  display: flex;
+  justify-content: center;
+}
+
 .theQuestion {
   font-family:  "BackIssuesBB", "Arial Black", Gadget, sans-serif;
   color: $color-text-dark;
@@ -795,11 +804,46 @@ button.viewBallots.jump {
 }
 
 .rulesButton {
-  height: 4vmax;
   margin-left: 5px;
-  margin-top: -4px;
   /* Unfudge */
   fill: $color-small-button;
+}
+
+@media (max-aspect-ratio: 3/4) {
+  //Vertical, small
+  .rulesButton {
+    height: $height-rulesButton-small;
+  }
+}
+@media (max-aspect-ratio: 3/4) and (min-width: 484px) and (min-height: 695px) {
+  //Vertical, medium
+  .rulesButton {
+    height: $height-rulesButton-normal;
+  }
+}
+@media (max-aspect-ratio: 3/4) and (min-width: 1043px) and  (min-height: 726px){
+  //Vertical, large
+  .rulesButton {
+    height: $height-rulesButton-large;
+  }
+}
+@media (min-aspect-ratio: 3/4) {
+  //Horizontal, small
+  .rulesButton {
+    height: $height-rulesButton-small;
+  }
+}
+@media (min-aspect-ratio: 3/4) and (min-width: 703px) and (min-height: 555px) {
+  //Horizontal, medium
+  .rulesButton {
+    height: $height-rulesButton-normal;
+  }
+}
+@media (min-aspect-ratio: 3/4) and (min-width: 1054px) and  (min-height: 833px){
+  //Horizontal, large
+  .rulesButton {
+    height: $height-rulesButton-large;
+  }
 }
 
 .theQuestionBlock:hover {
