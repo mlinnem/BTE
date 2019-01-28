@@ -18,7 +18,7 @@ class CraftyContenderImage extends React.Component {
         if (this.state.hidden) {
           return (<img className="photo" alt={this.props.animal.Name}/>);
         } else {
-          return (<img className="photo" alt={this.props.animal.Name} src={"https://n6d28h0794.execute-api.us-east-1.amazonaws.com/Production/photos?animalName=" + encodeURIComponent(this.props.animal.Name) + "&size=Width_600"}/>);
+          return (<img className="photo" alt={this.props.animal.Name} src={"https://n6d28h0794.execute-api.us-east-1.amazonaws.com/Production/photos?animalName=" + encodeURIComponent(this.props.animal.Name) + "&size=Width_500"}/>);
         }
 }
 
