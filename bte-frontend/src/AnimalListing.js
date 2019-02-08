@@ -8,10 +8,10 @@ const animalListing_mapStateToProps = (state, ownProps) => { return {
 
 class AnimalListing_View extends React.Component {
 render () {
-  var waitBeforeShow = 250;
+  var waitBeforeShow = 500;
   if (this.props.rank > 25) {
     //TODO: If it's not above the fold, okay to delay load a bit. Hacky though.
-    waitBeforeShow = 1000;
+    waitBeforeShow = 2000;
   }
 
   return (
