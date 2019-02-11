@@ -68,12 +68,13 @@ $height-rulesButton-large: 40px;
 $fontsize-rankingsHeaderTitle-large: 36pt;
 $fontsize-rank-large: 32pt;
 
-
-
+//--Mega
+$height-header-mega: 90px;
+$fontsize-header-mega: 55pt;
 
 //--Misc variables
 
-$height-header: calc(40px + 5vmin);
+//$height-header: calc(40px + 5vmin);
 $height-rankings-header: 120px;
 $height-button: 35px;
 $height-rankings-button-safari: 79px;
@@ -248,7 +249,7 @@ button.viewBallots.jump {
     to {}
   }
 }
-@media (max-aspect-ratio: 3/4) and (min-width: 1043px) and  (min-height: 726px){
+@media (max-aspect-ratio: 3/4) and (min-width: 780px) and  (min-height: 726px){
   //Vertical, large
   @keyframes showRankings {
     from {
@@ -261,6 +262,23 @@ button.viewBallots.jump {
   @keyframes showBallots {
     from {
       transform: translateY(calc(-100vh + #{$height-header-large} - #{$height-spacer}));
+    }
+
+    to {}
+  }
+}
+@media (max-aspect-ratio: 3/4) and (min-width: 1150px) and  (min-height: 726px){
+  @keyframes showRankings {
+    from {
+    }
+
+    to {
+      transform: translateY(calc(-100vh + #{$height-header-mega} - #{$height-spacer}));
+    }
+  }
+  @keyframes showBallots {
+    from {
+      transform: translateY(calc(-100vh + #{$height-header-mega} - #{$height-spacer}));
     }
 
     to {}
@@ -302,7 +320,7 @@ button.viewBallots.jump {
     to {}
   }
 }
-@media (min-aspect-ratio: 3/4) and (min-width: 1054px) and  (min-height: 833px){
+@media (min-aspect-ratio: 3/4) and (min-width: 780px) and  (min-height: 833px){
   //Horizontal, large
   @keyframes showRankings {
     from {
@@ -315,6 +333,24 @@ button.viewBallots.jump {
   @keyframes showBallots {
     from {
       transform: translateY(calc(-100vh + #{$height-header-large} - #{$height-spacer}));
+    }
+
+    to {}
+  }
+}
+@media (min-aspect-ratio: 3/4) and (min-width: 1150px) and  (min-height: 833px){
+  //Horizontal, large
+  @keyframes showRankings {
+    from {
+    }
+
+    to {
+      transform: translateY(calc(-100vh + #{$height-header-mega} - #{$height-spacer}));
+    }
+  }
+  @keyframes showBallots {
+    from {
+      transform: translateY(calc(-100vh + #{$height-header-mega} - #{$height-spacer}));
     }
 
     to {}
@@ -460,10 +496,16 @@ button.viewBallots.jump {
     height: $height-header-normal;
   }
 }
-@media (max-aspect-ratio: 3/4) and (min-width: 1043px) and  (min-height: 726px){
+@media (max-aspect-ratio: 3/4) and (min-width: 780px) and  (min-height: 726px){
   //Vertical, large
   .header {
     height: $height-header-large;
+  }
+}
+@media (max-aspect-ratio: 3/4) and (min-width: 1150px) and  (min-height: 726px){
+  //Vertical, mega
+  .header {
+    height: $height-header-mega;
   }
 }
 @media (min-aspect-ratio: 3/4) {
@@ -478,10 +520,17 @@ button.viewBallots.jump {
     height: $height-header-normal;
   }
 }
-@media (min-aspect-ratio: 3/4) and (min-width: 1054px) and  (min-height: 833px){
+@media (min-aspect-ratio: 3/4) and (min-width: 780px) and  (min-height: 833px){
   //Horizontal, large
   .header {
     height: $height-header-large;
+  }
+}
+
+@media (min-aspect-ratio: 3/4) and (min-width: 1150px) and  (min-height: 833px){
+  //Horizontal, mega
+  .header {
+    height: $height-header-mega;
   }
 }
 
@@ -507,10 +556,16 @@ button.viewBallots.jump {
     font-size: $fontsize-header-normal;
   }
 }
-@media (max-aspect-ratio: 3/4) and (min-width: 1043px) and  (min-height: 726px){
+@media (max-aspect-ratio: 3/4) and (min-width: 780px) and  (min-height: 726px){
   //Vertical, large
   .header-text {
     font-size: $fontsize-header-large;
+  }
+}
+@media (max-aspect-ratio: 3/4) and (min-width: 1150px) and  (min-height: 726px){
+  //Vertical, large
+  .header-text {
+    font-size: $fontsize-header-mega;
   }
 }
 @media (min-aspect-ratio: 3/4) {
@@ -525,10 +580,16 @@ button.viewBallots.jump {
     font-size: $fontsize-header-normal;
   }
 }
-@media (min-aspect-ratio: 3/4) and (min-width: 1054px) and  (min-height: 833px){
+@media (min-aspect-ratio: 3/4) and (min-width: 780px) and  (min-height: 833px){
   //Horizontal, large
   .header-text {
     font-size: $fontsize-header-large;
+  }
+}
+@media (min-aspect-ratio: 3/4) and (min-width: 1150px) and  (min-height: 833px){
+  //Horizontal, mega
+  .header-text {
+    font-size: $fontsize-header-mega;
   }
 }
 
@@ -574,7 +635,7 @@ button.viewBallots.jump {
     height: $height-questionBlock-normal;
   }
 }
-@media (max-aspect-ratio: 3/4) and (min-width: 1043px) and  (min-height: 726px){
+@media (max-aspect-ratio: 3/4) and (min-width: 780px) and  (min-height: 726px){
   //Vertical, large
   .theQuestionBlock {
     height: $height-questionBlock-large;
@@ -592,7 +653,7 @@ button.viewBallots.jump {
     height: $height-questionBlock-normal;
   }
 }
-@media (min-aspect-ratio: 3/4) and (min-width: 1054px) and  (min-height: 833px){
+@media (min-aspect-ratio: 3/4) and (min-width: 780px) and  (min-height: 833px){
   //Horizontal, large
   .theQuestionBlock {
     height: $height-questionBlock-large;
@@ -621,7 +682,7 @@ button.viewBallots.jump {
     font-size: $fontsize-theQuestion-normal;
   }
 }
-@media (max-aspect-ratio: 3/4) and (min-width: 1043px) and  (min-height: 726px){
+@media (max-aspect-ratio: 3/4) and (min-width: 780px) and  (min-height: 726px){
   //Vertical, large
   .theQuestion {
     font-size: $fontsize-theQuestion-large;
@@ -639,7 +700,7 @@ button.viewBallots.jump {
     font-size: $fontsize-theQuestion-normal;
   }
 }
-@media (min-aspect-ratio: 3/4) and (min-width: 1054px) and  (min-height: 833px){
+@media (min-aspect-ratio: 3/4) and (min-width: 780px) and  (min-height: 833px){
   //Horizontal, large
   .theQuestion {
     font-size: $fontsize-theQuestion-large;
@@ -705,10 +766,16 @@ button.viewBallots.jump {
     height: calc(100vh - #{$height-header-normal} - #{$height-results-panel-normal});
   }
 }
-@media (max-aspect-ratio: 3/4) and (min-width: 1043px) and  (min-height: 726px){
+@media (max-aspect-ratio: 3/4) and (min-width: 780px) and  (min-height: 726px){
   //Vertical, large
   .ballotViewer {
     height: calc(100vh - #{$height-header-large} - #{$height-results-panel-large});
+  }
+}
+@media (max-aspect-ratio: 3/4) and (min-width: 1150px) and  (min-height: 726px){
+  //Vertical, large
+  .ballotViewer {
+    height: calc(100vh - #{$height-header-mega} - #{$height-results-panel-large});
   }
 }
 @media (min-aspect-ratio: 3/4) {
@@ -723,10 +790,16 @@ button.viewBallots.jump {
     height: calc(100vh - #{$height-header-normal} - #{$height-results-panel-normal});
   }
 }
-@media (min-aspect-ratio: 3/4) and (min-width: 1054px) and  (min-height: 833px){
+@media (min-aspect-ratio: 3/4) and (min-width: 780px) and  (min-height: 833px){
   //Horizontal, large
   .ballotViewer {
     height: calc(100vh - #{$height-header-large} - #{$height-results-panel-large});
+  }
+}
+@media (min-aspect-ratio: 3/4) and (min-width: 1150px) and  (min-height: 833px){
+  //Horizontal, mega
+  .ballotViewer {
+    height: calc(100vh - #{$height-header-mega} - #{$height-results-panel-large});
   }
 }
 
@@ -821,7 +894,7 @@ button.viewBallots.jump {
     height: $height-rulesButton-normal;
   }
 }
-@media (max-aspect-ratio: 3/4) and (min-width: 1043px) and  (min-height: 726px){
+@media (max-aspect-ratio: 3/4) and (min-width: 780px) and  (min-height: 726px){
   //Vertical, large
   .rulesButton {
     height: $height-rulesButton-large;
@@ -839,7 +912,7 @@ button.viewBallots.jump {
     height: $height-rulesButton-normal;
   }
 }
-@media (min-aspect-ratio: 3/4) and (min-width: 1054px) and  (min-height: 833px){
+@media (min-aspect-ratio: 3/4) and (min-width: 780px) and  (min-height: 833px){
   //Horizontal, large
   .rulesButton {
     height: $height-rulesButton-large;
@@ -963,7 +1036,7 @@ button.viewBallots.jump {
     font-size: $fontsize-animalName-normal;
   }
 }
-@media (max-aspect-ratio: 3/4) and (min-width: 1043px) and  (min-height: 726px){
+@media (max-aspect-ratio: 3/4) and (min-width: 780px) and  (min-height: 726px){
   //Vertical, large
   .animalName {
     font-size: $fontsize-animalName-large;
@@ -981,7 +1054,7 @@ button.viewBallots.jump {
     font-size: $fontsize-animalName-normal;
   }
 }
-@media (min-aspect-ratio: 3/4) and (min-width: 1054px) and  (min-height: 833px){
+@media (min-aspect-ratio: 3/4) and (min-width: 780px) and  (min-height: 833px){
   //Horizontal, large
   .animalName {
     font-size: $fontsize-animalName-large;
@@ -1188,7 +1261,7 @@ button.viewBallots.jump {
     font-size: $fontsize-rankingsHeaderTitle-normal;
   }
 }
-@media (max-aspect-ratio: 3/4) and (min-width: 1043px) and  (min-height: 726px){
+@media (max-aspect-ratio: 3/4) and (min-width: 780px) and  (min-height: 726px){
   //Vertical, large
   .rankingsHeaderTitle {
     font-size: $fontsize-rankingsHeaderTitle-large;
@@ -1206,7 +1279,7 @@ button.viewBallots.jump {
     font-size: $fontsize-rankingsHeaderTitle-normal;
   }
 }
-@media (min-aspect-ratio: 3/4) and (min-width: 1054px) and  (min-height: 833px){
+@media (min-aspect-ratio: 3/4) and (min-width: 780px) and  (min-height: 833px){
   //Horizontal, large
   .rankingsHeaderTitle {
     font-size: $fontsize-rankingsHeaderTitle-large;
@@ -1247,7 +1320,7 @@ button.viewBallots.jump {
     font-size: $fontsize-rank-normal;
   }
 }
-@media (max-aspect-ratio: 3/4) and (min-width: 1043px) and  (min-height: 726px){
+@media (max-aspect-ratio: 3/4) and (min-width: 780px) and  (min-height: 726px){
   //Vertical, large
   .rank {
     font-size: $fontsize-rank-large;
@@ -1265,7 +1338,7 @@ button.viewBallots.jump {
     font-size: $fontsize-rank-normal;
   }
 }
-@media (min-aspect-ratio: 3/4) and (min-width: 1054px) and  (min-height: 833px){
+@media (min-aspect-ratio: 3/4) and (min-width: 780px) and  (min-height: 833px){
   //Horizontal, large
   .rank {
     font-size: $fontsize-rank-large;
@@ -1287,7 +1360,7 @@ button.viewBallots.jump {
     font-size: $fontsize-animalName-normal;
   }
 }
-@media (max-aspect-ratio: 3/4) and (min-width: 1043px) and  (min-height: 726px){
+@media (max-aspect-ratio: 3/4) and (min-width: 780px) and  (min-height: 726px){
   //Vertical, large
   .description .name {
     font-size: $fontsize-animalName-large;
@@ -1305,7 +1378,7 @@ button.viewBallots.jump {
     font-size: $fontsize-animalName-normal;
   }
 }
-@media (min-aspect-ratio: 3/4) and (min-width: 1054px) and  (min-height: 833px){
+@media (min-aspect-ratio: 3/4) and (min-width: 780px) and  (min-height: 833px){
   //Horizontal, large
   .description .name {
     font-size: $fontsize-animalName-large;
@@ -1348,7 +1421,7 @@ button.viewBallots.jump {
       height: calc(100vh + #{$height-results-panel-normal});
   }
 }
-@media (max-aspect-ratio: 3/4) and (min-width: 1043px) and  (min-height: 726px){
+@media (max-aspect-ratio: 3/4) and (min-width: 780px) and  (min-height: 726px){
   //Vertical, large
   .ballotBox {
       height: calc(100vh + #{$height-results-panel-large});
@@ -1366,7 +1439,7 @@ button.viewBallots.jump {
       height: calc(100vh + #{$height-results-panel-normal});
   }
 }
-@media (min-aspect-ratio: 3/4) and (min-width: 1054px) and  (min-height: 833px){
+@media (min-aspect-ratio: 3/4) and (min-width: 780px) and  (min-height: 833px){
   //Horizontal, large
   .ballotBox {
       height: calc(100vh + #{$height-results-panel-large});
@@ -1392,7 +1465,7 @@ button.viewBallots.jump {
     height: $height-results-panel-normal;
   }
 }
-@media (max-aspect-ratio: 3/4) and (min-width: 1043px) and  (min-height: 726px){
+@media (max-aspect-ratio: 3/4) and (min-width: 780px) and  (min-height: 726px){
   //Vertical, large
   .resultsPanelSpaceHolder {
     height: $height-results-panel-large;
@@ -1410,7 +1483,7 @@ button.viewBallots.jump {
     height: $height-results-panel-normal;
   }
 }
-@media (min-aspect-ratio: 3/4) and (min-width: 1054px) and  (min-height: 833px){
+@media (min-aspect-ratio: 3/4) and (min-width: 780px) and  (min-height: 833px){
   //Horizontal, large
   .resultsPanelSpaceHolder {
     height: $height-results-panel-large;
@@ -1442,7 +1515,7 @@ button.viewBallots.jump {
     top: calc(-1 * #{$height-results-panel-normal})
   }
 }
-@media (max-aspect-ratio: 3/4) and (min-width: 1043px) and  (min-height: 726px){
+@media (max-aspect-ratio: 3/4) and (min-width: 780px) and  (min-height: 726px){
   //Vertical, large
   .resultsPanel {
     height: $height-results-panel-large;
@@ -1463,7 +1536,7 @@ button.viewBallots.jump {
     top: calc(-1 * #{$height-results-panel-normal})
   }
 }
-@media (min-aspect-ratio: 3/4) and (min-width: 1054px) and  (min-height: 833px){
+@media (min-aspect-ratio: 3/4) and (min-width: 780px) and  (min-height: 833px){
   //Horizontal, large
   .resultsPanel {
     height: $height-results-panel-large;
@@ -1684,7 +1757,7 @@ button.viewBallots.jump {
     margin-top: $height-resultRow-margin-normal;
   }
 }
-@media (max-aspect-ratio: 3/4) and (min-width: 1043px) and  (min-height: 726px){
+@media (max-aspect-ratio: 3/4) and (min-width: 780px) and  (min-height: 726px){
   //Vertical, large
   .winRateRow {
     margin-top: $height-resultRow-margin-large;
@@ -1702,7 +1775,7 @@ button.viewBallots.jump {
     margin-top: $height-resultRow-margin-normal;
   }
 }
-@media (min-aspect-ratio: 3/4) and (min-width: 1054px) and  (min-height: 833px){
+@media (min-aspect-ratio: 3/4) and (min-width: 780px) and  (min-height: 833px){
   //Horizontal, large
   .winRateRow {
     margin-top: $height-resultRow-margin-large;
@@ -1745,7 +1818,7 @@ button.viewBallots.jump {
     width: $width-animalResultsImage-normal;
   }
 }
-@media (max-aspect-ratio: 3/4) and (min-width: 1043px) and  (min-height: 726px){
+@media (max-aspect-ratio: 3/4) and (min-width: 780px) and  (min-height: 726px){
   //Vertical, large
   .resultsPanelPhotoContainer img {
     height: $height-animalResultsImage-large;
@@ -1766,7 +1839,7 @@ button.viewBallots.jump {
     width: $width-animalResultsImage-normal;
   }
 }
-@media (min-aspect-ratio: 3/4) and (min-width: 1054px) and  (min-height: 833px){
+@media (min-aspect-ratio: 3/4) and (min-width: 780px) and  (min-height: 833px){
   //Horizontal, large
   .resultsPanelPhotoContainer img {
     height: $height-animalResultsImage-large;
@@ -1812,7 +1885,7 @@ button.viewBallots.jump {
     height: $height-animalResultsBar-normal;
   }
 }
-@media (max-aspect-ratio: 3/4) and (min-width: 1043px) and  (min-height: 726px){
+@media (max-aspect-ratio: 3/4) and (min-width: 780px) and  (min-height: 726px){
   //Vertical, large
   .percentBarBlock {
     height: $height-animalResultsBar-large;
@@ -1830,7 +1903,7 @@ button.viewBallots.jump {
     height: $height-animalResultsBar-normal;
   }
 }
-@media (min-aspect-ratio: 3/4) and (min-width: 1054px) and  (min-height: 833px){
+@media (min-aspect-ratio: 3/4) and (min-width: 780px) and  (min-height: 833px){
   //Horizontal, large
   .percentBarBlock {
     height: $height-animalResultsBar-large;
@@ -1861,7 +1934,7 @@ button.viewBallots.jump {
     height: $height-animalResultsBar-normal;
   }
 }
-@media (max-aspect-ratio: 3/4) and (min-width: 1043px) and  (min-height: 726px){
+@media (max-aspect-ratio: 3/4) and (min-width: 780px) and  (min-height: 726px){
   //Vertical, large
   .percentBar {
     height: $height-animalResultsBar-large;
@@ -1879,7 +1952,7 @@ button.viewBallots.jump {
     height: $height-animalResultsBar-normal;
   }
 }
-@media (min-aspect-ratio: 3/4) and (min-width: 1054px) and  (min-height: 833px){
+@media (min-aspect-ratio: 3/4) and (min-width: 780px) and  (min-height: 833px){
   //Horizontal, large
   .percentBar {
     height: $height-animalResultsBar-large;
@@ -1917,7 +1990,7 @@ button.viewBallots.jump {
     font-size: $fontsize-animalResultsText-normal;
   }
 }
-@media (max-aspect-ratio: 3/4) and (min-width: 1043px) and  (min-height: 726px){
+@media (max-aspect-ratio: 3/4) and (min-width: 780px) and  (min-height: 726px){
   //Vertical, large
   .animalNameOnPercentBar {
     font-size: $fontsize-animalResultsText-large;
@@ -1935,7 +2008,7 @@ button.viewBallots.jump {
     font-size: $fontsize-animalResultsText-normal;
   }
 }
-@media (min-aspect-ratio: 3/4) and (min-width: 1054px) and  (min-height: 833px){
+@media (min-aspect-ratio: 3/4) and (min-width: 780px) and  (min-height: 833px){
   //Horizontal, large
   .animalNameOnPercentBar {
     font-size: $fontsize-animalResultsText-large;
@@ -1969,7 +2042,7 @@ button.viewBallots.jump {
     font-size: $fontsize-animalResultsText-normal;
   }
 }
-@media (max-aspect-ratio: 3/4) and (min-width: 1043px) and  (min-height: 726px){
+@media (max-aspect-ratio: 3/4) and (min-width: 780px) and  (min-height: 726px){
   //Vertical, large
   .percentAsNumbers {
     font-size: $fontsize-animalResultsText-large;
@@ -1987,7 +2060,7 @@ button.viewBallots.jump {
     font-size: $fontsize-animalResultsText-normal;
   }
 }
-@media (min-aspect-ratio: 3/4) and (min-width: 1054px) and  (min-height: 833px){
+@media (min-aspect-ratio: 3/4) and (min-width: 780px) and  (min-height: 833px){
   //Horizontal, large
   .percentAsNumbers {
     font-size: $fontsize-animalResultsText-large;
@@ -2084,10 +2157,16 @@ button.viewBallots.jump {
     height:  calc(100vh - #{$height-header-normal});
   }
 }
-@media (max-aspect-ratio: 3/4) and (min-width: 1043px) and  (min-height: 726px){
-  //Vertical, large
+@media (max-aspect-ratio: 3/4) and (min-width: 780px) and  (min-height: 726px){
+  //Vertical, mega
   .rankingsPanel {
     height:  calc(100vh - #{$height-header-large});
+  }
+}
+@media (max-aspect-ratio: 3/4) and (min-width: 1150px) and  (min-height: 726px){
+  //Vertical, large
+  .rankingsPanel {
+    height:  calc(100vh - #{$height-header-mega});
   }
 }
 @media (min-aspect-ratio: 3/4) {
@@ -2102,10 +2181,16 @@ button.viewBallots.jump {
     height:  calc(100vh - #{$height-header-normal});
   }
 }
-@media (min-aspect-ratio: 3/4) and (min-width: 1054px) and  (min-height: 833px){
+@media (min-aspect-ratio: 3/4) and (min-width: 780px) and  (min-height: 833px){
   //Horizontal, large
   .rankingsPanel {
     height:  calc(100vh - #{$height-header-large});
+  }
+}
+@media (min-aspect-ratio: 3/4) and (min-width: 1150px) and  (min-height: 833px){
+  //Horizontal, mega
+  .rankingsPanel {
+    height:  calc(100vh - #{$height-header-mega});
   }
 }
 
@@ -2132,10 +2217,16 @@ button.viewBallots.jump {
     height:  calc(100vh - #{$height-header-normal} - #{$height-rankings-header});
   }
 }
-@media (max-aspect-ratio: 3/4) and (min-width: 1043px) and  (min-height: 726px){
+@media (max-aspect-ratio: 3/4) and (min-width: 780px) and  (min-height: 726px){
   //Vertical, large
   .rankingsContent {
     height:  calc(100vh - #{$height-header-large} - #{$height-rankings-header});
+  }
+}
+@media (max-aspect-ratio: 3/4) and (min-width: 1150px) and  (min-height: 726px){
+  //Vertical, large
+  .rankingsContent {
+    height:  calc(100vh - #{$height-header-mega} - #{$height-rankings-header});
   }
 }
 @media (min-aspect-ratio: 3/4) {
@@ -2150,10 +2241,16 @@ button.viewBallots.jump {
     height:  calc(100vh - #{$height-header-normal} - #{$height-rankings-header});
   }
 }
-@media (min-aspect-ratio: 3/4) and (min-width: 1054px) and  (min-height: 833px){
+@media (min-aspect-ratio: 3/4) and (min-width: 780px) and  (min-height: 833px){
   //Horizontal, large
   .rankingsContent {
     height:  calc(100vh - #{$height-header-large} - #{$height-rankings-header});
+  }
+}
+@media (min-aspect-ratio: 3/4) and (min-width: 1150px) and  (min-height: 833px){
+  //Horizontal, large
+  .rankingsContent {
+    height:  calc(100vh - #{$height-header-mega} - #{$height-rankings-header});
   }
 }
 
