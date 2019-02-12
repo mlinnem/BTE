@@ -1225,10 +1225,6 @@ button.viewBallots.jump {
   }
 }
 @media (min-aspect-ratio: 7/5) {
-  .animal {
-    width: 55vh;
-    height: 55vh;
-  }
 
   .cardWrapper.LEFT {
     justify-content: flex-start;
@@ -1236,6 +1232,35 @@ button.viewBallots.jump {
 
   .cardWrapper.RIGHT {
     justify-content: flex-end;
+  }
+}
+
+@media (min-aspect-ratio: 7/5) {
+  //Horizontal, small
+  .animal {
+    width: calc(90vh - #{$height-header-small} - #{$height-results-panel-small} - #{$height-questionBlock-small});
+    height: calc(90vh - #{$height-header-small} - #{$height-results-panel-small} - #{$height-questionBlock-small});
+  }
+}
+@media (min-aspect-ratio: 7/5) and (min-width: 703px) and (min-height: 555px) {
+  //Horizontal, medium
+  .animal {
+    width: calc(90vh - #{$height-header-normal} - #{$height-results-panel-normal} - #{$height-questionBlock-normal});
+    height: calc(90vh - #{$height-header-normal} - #{$height-results-panel-normal} - #{$height-questionBlock-normal});
+  }
+}
+@media (min-aspect-ratio: 7/5) and (min-width: 780px) and  (min-height: 833px){
+  //Horizontal, large
+  .animal {
+    width: calc(90vh - #{$height-header-large} - #{$height-results-panel-large} - #{$height-questionBlock-large});
+    height: calc(90vh - #{$height-header-large} - #{$height-results-panel-large} - #{$height-questionBlock-large});
+  }
+}
+@media (min-aspect-ratio: 3/4) and (min-width: 1150px) and  (min-height: 833px){
+  //Horizontal, mega
+  .animal {
+    width: calc(90vh - #{$height-header-mega} - #{$height-results-panel-large}  - #{$height-questionBlock-large});
+    height: calc(90vh - #{$height-header-mega} - #{$height-results-panel-large} - #{$height-questionBlock-large});
   }
 }
 
@@ -2163,13 +2188,13 @@ button.viewBallots.jump {
   }
 }
 @media (max-aspect-ratio: 3/4) and (min-width: 780px) and  (min-height: 726px){
-  //Vertical, mega
+  //Vertical, large
   .rankingsPanel {
     height:  calc(100vh - #{$height-header-large});
   }
 }
 @media (max-aspect-ratio: 3/4) and (min-width: 1150px) and  (min-height: 726px){
-  //Vertical, large
+  //Vertical, mega
   .rankingsPanel {
     height:  calc(100vh - #{$height-header-mega});
   }
