@@ -80,7 +80,6 @@ $height-button: 35px;
 $height-rankings-button-safari: 79px;
 $height-spacer: 0px;
 $height-animalListing-image: 75px;
-$height-results-panel: calc(105px + #{$height-button});
 
 $width-button: 170px;
 $width-padding: 5vw;
@@ -1600,7 +1599,7 @@ button.viewBallots.jump {
 
 @keyframes bounceUp {
   0% {
-    transform: translateY(calc(#{$height-results-panel}));
+    transform: translateY(calc(#{$height-results-panel-normal}));
   }
 
 
@@ -1624,66 +1623,66 @@ button.viewBallots.jump {
 
 @keyframes printUp2 {
   0% {
-    transform: translateY(calc(#{$height-results-panel}));
+    transform: translateY(calc(#{$height-results-panel-normal}));
   }
 
   6% {
-    transform: translateY(calc(#{$height-results-panel} * .90));
+    transform: translateY(calc(#{$height-results-panel-normal} * .90));
   }
 
   12% {
-    transform: translateY(calc(#{$height-results-panel} * .90));
+    transform: translateY(calc(#{$height-results-panel-normal} * .90));
   }
 
   18% {
-      transform: translateY(calc(#{$height-results-panel} * .80));
+      transform: translateY(calc(#{$height-results-panel-normal} * .80));
   }
 
   24% {
-      transform: translateY(calc(#{$height-results-panel} * .80));
+      transform: translateY(calc(#{$height-results-panel-normal} * .80));
   }
 
   30% {
-      transform: translateY(calc(#{$height-results-panel} * .70));
+      transform: translateY(calc(#{$height-results-panel-normal} * .70));
   }
 
   36% {
-      transform: translateY(calc(#{$height-results-panel} * .70));
+      transform: translateY(calc(#{$height-results-panel-normal} * .70));
   }
 
   42% {
-      transform: translateY(calc(#{$height-results-panel} * .60));
+      transform: translateY(calc(#{$height-results-panel-normal} * .60));
   }
 
   48% {
-      transform: translateY(calc(#{$height-results-panel} * .60));
+      transform: translateY(calc(#{$height-results-panel-normal} * .60));
   }
   54% {
-      transform: translateY(calc(#{$height-results-panel} * .50));
+      transform: translateY(calc(#{$height-results-panel-normal} * .50));
   }
 
   60% {
-      transform: translateY(calc(#{$height-results-panel} * .50));
+      transform: translateY(calc(#{$height-results-panel-normal} * .50));
   }
 
   66% {
-      transform: translateY(calc(#{$height-results-panel} * .40));
+      transform: translateY(calc(#{$height-results-panel-normal} * .40));
   }
 
   72% {
-      transform: translateY(calc(#{$height-results-panel} * .40));
+      transform: translateY(calc(#{$height-results-panel-normal} * .40));
   }
 
   78% {
-      transform: translateY(calc(#{$height-results-panel} * .30));
+      transform: translateY(calc(#{$height-results-panel-normal} * .30));
   }
 
   84% {
-      transform: translateY(calc(#{$height-results-panel} * .30));
+      transform: translateY(calc(#{$height-results-panel-normal} * .30));
   }
 
   90% {
-      transform: translateY(calc(#{$height-results-panel} * .30));
+      transform: translateY(calc(#{$height-results-panel-normal} * .30));
   }
 
   100% {

@@ -37,14 +37,14 @@ function startup() {
 
   ar.store.dispatch(ar.fetchAuthKeyIfNeeded());
 
-  if (isIOSSafari) {
+  if (isIOSSafari()) {
     loadIOSSafariCSS();
   }
 }
 
 function loadIOSSafariCSS() {
 
-    var cssPath = "./iosSafari.css";
+    var cssPath = "/iosSafari.css";
 
     var head = document.getElementsByTagName('head')[0];
     var link = document.createElement('link');
