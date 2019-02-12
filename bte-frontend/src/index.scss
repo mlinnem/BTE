@@ -431,6 +431,7 @@ button.viewBallots.jump {
     overflow: scroll;
     max-height: 40vh;
     overflow-scrolling: touch;
+    -webkit-overflow-scrolling: touch;
   }
 }
 
@@ -2164,6 +2165,7 @@ button.viewBallots.jump {
 .rankingsPanel {
   overflow: auto;
   overflow-scrolling: touch;
+  -webkit-overflow-scrolling: touch;
   //height: calc(100vh - #{$height-header-normal});
   padding-left: $width-padding;
   padding-right: $width-padding;
