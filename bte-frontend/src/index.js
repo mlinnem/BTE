@@ -26,6 +26,15 @@ function isIOSSafari() {
 }
 
 function startup() {
+
+    var WebFont = require('webfontloader');
+
+    WebFont.load({
+      google: {
+        families: ['Alfa Slab One', 'Special Elite', 'Roboto Slab']
+      }
+    });
+
   ar.store.dispatch(ar.fetchAuthKeyIfNeeded());
 
   if (isIOSSafari) {

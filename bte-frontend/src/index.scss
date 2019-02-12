@@ -154,6 +154,11 @@ $time-initial-rightCard-appear: $time-initial-vs-appear + $time-vs-to-rightCard;
   overflow: hidden;
 }
 
+.wf-loading * {
+  font-size: 0pt !important; /* Hide text until webfonts load */
+
+}
+
 .app {
   height: 100vh;
 }
