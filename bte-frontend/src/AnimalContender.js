@@ -4,7 +4,7 @@ import {QUEUE_STATE} from "./actionsAndReducers";
 import CraftyContenderImage from "./CraftyContenderImage";
 const ReactRedux = require('react-redux');
 
-const DELAY_HIDDEN_IMAGE_LOAD_MILLISECONDS = 750;
+const DELAY_HIDDEN_IMAGE_LOAD_MILLISECONDS = 300;
 
 const animalContender_mapStateToProps = (state, ownProps) => {return {
 animal : state.animals.animalStore[ownProps.id],

@@ -37,7 +37,7 @@ function startup() {
 
   ar.store.dispatch(ar.fetchAuthKeyIfNeeded());
 
-  if (isIOSSafari()) {
+  if (true) {
     loadIOSSafariCSS();
   }
 }

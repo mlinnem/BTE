@@ -2,36 +2,45 @@
 
 /* Add 40 pixels to results panel, to button height and negative top, to button bottom padding. */
 
-
+/* Here be hack-dragons */
 @media (max-aspect-ratio: 3/4) {
   .resultsPanelSpaceHolder {
-    height: 140px !important;
+    height: 180px !important;
   }
 }
 
 @media (max-aspect-ratio: 3/4) {
   .ballotViewer {
-    height: calc(100vh - 27px - 140px);
+    height: calc(100vh - 27px - 180px);
   }
 }
 
-
+@media (max-aspect-ratio: 3/4) {
 button.viewRankings {
-  top: -75px !important;
-  height: 75px !important;
-  padding-bottom: 90px !important;
+  top: -115px !important;
+  height: 115px !important;
+  padding-bottom: 130px !important;
+}
 }
 
 @media (max-aspect-ratio: 3/4) {
   .ballotBox {
-    height: calc(100vh + 140px) !important;
+    height: calc(100vh + 180px) !important;
+  }
+}
+
+/* Full height minus the extra bits, take half of it and give it a 5vh total margin */
+@media (min-aspect-ratio: 5/14) and (max-aspect-ratio: 3/4) {
+  .animal {
+    width: calc((100vh - 27px - 180px - 30px) / 2 - 5vh);
+    height: calc((100vh - 27px - 180px - 30px) / 2 - 5vh);
   }
 }
 
 @media (max-aspect-ratio: 3/4) {
   .resultsPanel {
-    height: 140px !important;
-    top: calc(-1 * 140px) !important;
+    height: 180px !important;
+    top: calc(-1 * 180px) !important;
   }
 }
 

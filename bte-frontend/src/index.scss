@@ -155,7 +155,7 @@ $time-initial-rightCard-appear: $time-initial-vs-appear + $time-vs-to-rightCard;
 
 .wf-loading * {
   font-size: 0pt !important; /* Hide text until webfonts load */
-
+  background-color: $color-background;
 }
 
 .app {
